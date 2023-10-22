@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Login";
+﻿
+@{
+    ViewBag.Title = "Register";
     Layout = "~/Areas/Admin/Views/Shared/LayoutUser.cshtml";
 }
 
@@ -9,31 +10,36 @@
             <img src="Images/Logo.jpg" alt="logo">
         </div>
         <div class="login-card-header">
-            <h1>Sign In</h1>
-            <div>Please login to use the platform</div>
+            <h1>Register</h1>
+            <div>Please register to create an account</div>
         </div>
         <form class="login-card-form">
             <div class="form-item">
+                <span class="form-item-icon material-symbols-rounded">account_circle</span>
+                <input type="text" placeholder="Full Name" id="nameForm" required>
+            </div>
+            <div class="form-item">
                 <span class="form-item-icon material-symbols-rounded">mail</span>
-                <input type="text" placeholder="Enter Email" id="emailForm"
-                       autofocus required>
+                <input type="email" placeholder="Enter Email" id="emailForm" required>
             </div>
             <div class="form-item">
                 <span class="form-item-icon material-symbols-rounded">lock</span>
-                <input type="password" placeholder="Enter Password" id="passwordForm"
-                       required>
+                <input type="password" placeholder="Password" id="passwordForm" required>
+            </div>
+            <div class="form-item">
+                <span class="form-item-icon material-symbols-rounded">lock</span>
+                <input type="password" placeholder="Confirm Password" id="confirmPasswordForm" required>
             </div>
             <div class="form-item-other">
                 <div class="checkbox">
-                    <input type="checkbox" id="rememberMeCheckbox" checked>
-                    <label for="rememberMeCheckbox">Remember me</label>
+                    <input type="checkbox" id="agreeTermsCheckbox" required>
+                    <label for="agreeTermsCheckbox">I agree to the <a href="#">Terms and Conditions</a></label>
                 </div>
-                <a href="#">I forgot my password!</a>
             </div>
-            <button type="submit">Sign In</button>
+            <button type="submit">Register</button>
         </form>
         <div class="login-card-footer">
-            Don't have an account? <a href="#">Create a free account.</a>
+            Already have an account? <a href="#">Login here.</a>
         </div>
     </div>
     <div class="login-card-social">
@@ -58,3 +64,4 @@
         </div>
     </div>
 </div>
+
