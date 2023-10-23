@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationProject.Models;
+using PagedList;
+
 namespace WebApplicationProject.Controllers
 {
     public class HomeController : Controller
@@ -16,10 +18,12 @@ namespace WebApplicationProject.Controllers
             return View();
         }
 
-        public ActionResult Course()
+        public ActionResult Course(int ?page)
         {
+            int iSize = 12;
+            int iPageNum = (page ?? 1);
             var khoahoc = from kh in db.KHOAHOC select kh;
-            return View(khoahoc.OrderBy(s => s.MaKhoaHoc));
+            return View(khoahoc.OrderBy(s => s.MaKhoaHoc).ToPagedList(iPageNum, iSize));
         }
 
         public ActionResult Contact()

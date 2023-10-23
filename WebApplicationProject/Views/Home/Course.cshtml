@@ -1,4 +1,6 @@
-﻿@model IEnumerable<WebApplicationProject.Models.KHOAHOC>
+﻿@using WebApplicationProject.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<KHOAHOC>
 @{
     ViewBag.Title = "Course";
     Layout = "~/Views/Shared/LayoutHomeProject.cshtml";
@@ -50,6 +52,17 @@
             </div>
         </div>*@
 </section>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Course", "Home", new { iMaKH = ViewBag.MaKH, page = page }))
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>
+
 @helper TrunCate(string s, int length)
 {
     if (s.Length < length)
