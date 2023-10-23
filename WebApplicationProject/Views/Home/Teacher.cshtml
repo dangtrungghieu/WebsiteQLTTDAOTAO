@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WebApplicationProject.Models.NHANVIEN>
 @{
     ViewBag.Title = "Teacher";
     Layout = "~/Views/Shared/LayoutHomeProject.cshtml";
@@ -9,8 +9,22 @@
 <!-- teacher section  -->
 
 <section class="teacher">
-
-    <div class="box">
+    @foreach (var giaovien in Model)
+    {
+        <div class="box">
+            <img src="~/images/@giaovien.AnhDaiDien" alt="">
+            <h3>@giaovien.TenNhanVien</h3>
+            <span>Teacher</span>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+    }
+    @*<div class="box">
         <img src="~/images/teacher-1.png" alt="">
         <h3>john deo</h3>
         <span>teacher</span>
@@ -21,46 +35,7 @@
             <a href="#" class="fab fa-instagram"></a>
             <a href="#" class="fab fa-linkedin"></a>
         </div>
-    </div>
-
-    <div class="box">
-        <img src="~/images/teacher-2.png" alt="">
-        <h3>john deo</h3>
-        <span>teacher</span>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-        </div>
-    </div>
-
-    <div class="box">
-        <img src="~/images/teacher-3.png" alt="">
-        <h3>john deo</h3>
-        <span>teacher</span>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-        </div>
-    </div>
-
-    <div class="box">
-        <img src="~/images/teacher-4.png" alt="">
-        <h3>john deo</h3>
-        <span>teacher</span>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-        </div>
-    </div>
+    </div>*@
 
 </section>
 
