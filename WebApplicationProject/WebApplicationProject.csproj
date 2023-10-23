@@ -133,6 +133,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310230729415_DatabaseVer_1.cs" />
+    <Compile Include="Migrations\202310230729415_DatabaseVer_1.Designer.cs">
+      <DependentUpon>202310230729415_DatabaseVer_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CAHOC.cs" />
     <Compile Include="Models\CATHI.cs" />
@@ -190,6 +194,7 @@
     <Content Include="images\KH5.jpg" />
     <Content Include="images\KH6.jpg" />
     <Content Include="images\Logo_Version1.png" />
+    <Content Include="images\preloader.gif" />
     <Content Include="images\student-1.png" />
     <Content Include="images\student-2.png" />
     <Content Include="images\student-3.png" />
@@ -251,6 +256,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202310230729415_DatabaseVer_1.resx">
+      <DependentUpon>202310230729415_DatabaseVer_1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

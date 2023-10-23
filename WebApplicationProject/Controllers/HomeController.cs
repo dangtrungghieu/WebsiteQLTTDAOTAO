@@ -30,7 +30,7 @@ namespace WebApplicationProject.Controllers
         public ActionResult Teacher()
         {
             var giaovien = (from gv in db.NHANVIEN
-                            where gv.MaLoai_NhanVien == 6
+                            where gv.MaLoai_NhanVien == 2
                             select gv).ToList();
             return View(giaovien);
         }
@@ -44,5 +44,6 @@ namespace WebApplicationProject.Controllers
         {
             return View();
         }
+
     }
 }
