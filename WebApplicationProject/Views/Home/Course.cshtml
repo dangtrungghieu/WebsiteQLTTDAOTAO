@@ -52,6 +52,8 @@
             </div>
         </div>*@
 </section>
+
+@*Phần Menu phân trang*@
 Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
 <div class="MenuTrang">
     @Html.PagedListPager(Model, page => Url.Action("Course", "Home", new { iMaKH = ViewBag.MaKH, page = page }))
