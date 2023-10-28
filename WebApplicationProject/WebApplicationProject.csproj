@@ -135,6 +135,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -181,6 +182,7 @@
     <Content Include="Content\CssAdmin.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\reset.css" />
+    <Content Include="Content\styleAdmin.css" />
     <Content Include="Content\StyleProject.css" />
     <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
@@ -257,6 +259,11 @@
     <Content Include="plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="plugins\themify-icons\fonts\themify.woff" />
     <Content Include="css\style.css.map" />
+    <Content Include="Areas\Admin\Views\Login\Admin.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Layout_Admin.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\NavAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\NavRight.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -285,6 +292,8 @@
     <Content Include="Views\Home\Teacher.cshtml" />
     <Content Include="Views\Home\Price.cshtml" />
     <Content Include="Views\Home\Review.cshtml" />
+    <Content Include="Views\Home\NavHeader.cshtml" />
+    <Content Include="Views\Home\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

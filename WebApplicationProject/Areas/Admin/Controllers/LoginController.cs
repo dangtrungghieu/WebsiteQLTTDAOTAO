@@ -13,5 +13,21 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         {
             return View();
         }
+        
+        //Get: Dang Nhap Admin
+        public ActionResult Admin()
+        {
+            return View();
+        }
+
+        public ActionResult NavAdmin()
+        {
+            return View();
+        }
+
+        public ActionResult NavRight()
+        {
+            return View();
+        }
     }
 }

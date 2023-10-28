@@ -49,5 +49,14 @@ namespace WebApplicationProject.Controllers
             return View();
         }
 
+        public ActionResult NavHeader()
+        {
+            return View();
+        }
+        public ActionResult Footer()
+        {
+            return View();
+        }
+
     }
 }
