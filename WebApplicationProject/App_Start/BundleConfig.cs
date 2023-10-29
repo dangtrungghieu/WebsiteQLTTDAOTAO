@@ -29,7 +29,7 @@ namespace WebApplicationProject
             bundles.Add(new ScriptBundle("~/Script/jsProject").Include("~/Scripts/script.js"));
             bundles.Add(new StyleBundle("~/Content/cssLoginRegisterUser").Include("~/Content/StyleLoginUser.css"));
             bundles.Add(new ScriptBundle("~/Script/jsLoginRegisterUser").Include("~/Scripts/ScriptLoginUser.js"));
-            bundles.Add(new StyleBundle("~/Content/styleAdmin").Include("~/Content/styleAdmin.css"));
+            bundles.Add(new StyleBundle("~/Content/styleAdmin").Include("~/Content/styleAdmin.css", "~/Content/StyleCreate.css"));
             bundles.Add(new StyleBundle("~/Content/cssLoginAdmin").Include("~/Content/cssLoginAdmin.css"));
         }
     }

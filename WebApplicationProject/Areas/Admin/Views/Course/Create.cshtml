@@ -1,7 +1,88 @@
-﻿
+﻿@model IEnumerable<WebApplicationProject.Model.KHOAHOC>
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
 }
+<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+<div class="container-fluid px-4 bg-create">
+    <div class="row g-3 my-2">
+        <h1 class="well" style="text-align:center">THÊM KHÓA HỌC MỚI</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                @using (Html.BeginForm("Create", "Course", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <label class="mg-head">Tên khóa học</label>
+                                <input type="text" placeholder="Nhập tên khóa học.." class="form-control"
+                                       value="@ViewBag.Ten" name="sTen" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="mg-head">Mô tả</label>
+                            <textarea placeholder="Nhập mô tả ở đây..." rows="3" class="form-control"
+                                      id="mota" name="sMoTa" required>@ViewBag.MoTa</textarea>
+                        </div>
+                        @*<div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label>Lệ phí</label>
+                        <input type="number" min="0" placeholder="Nhập lệ phí của khóa học.." class="form-control">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label>State</label>
+                        <input type="text" placeholder="Enter State Name Here.." class="form-control">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label>Zip</label>
+                        <input type="text" placeholder="Enter Zip Code Here.." class="form-control">
+                    </div>
+                </div>*@
+                        @*<div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label>Title</label>
+                        <input type="text" placeholder="Enter Designation Here.." class="form-control">
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <label>Company</label>
+                        <input type="text" placeholder="Enter Company Name Here.." class="form-control">
+                    </div>
+                </div>*@
+                        <div class="form-group">
+                            <label class="mg-head">Lệ phí</label>
+                            <input type="number" min="0" placeholder="Nhập lệ phí của khóa học..." class="form-control"
+                                   value="@ViewBag.LePhi" name="sLePhi" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="mg-head">Ảnh bìa</label>
+                            <input type="file" class="form-control" name="sAnhBia" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="mg-head">Mã nhân viên</label>
+                            <input type="text" value="5" class="form-control" name="sMaNV" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="mg-head">Tên nhân viên</label>
+                            <input type="text" value="Đặng Trung Hiếu" class="form-control" name="sTenNV" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="mg-head">Ngày tạo</label>
+                            <input type="date" class="form-control" name="sNgayTao" required>
+                            <div class="thongbao">
+                                <p>@ViewBag.ThongBaoNgayTao</p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success mg-top ">Thêm mới</button>
+                        <button type="reset" class="btn btn-danger mg-top ">Nhập lại</button>
+                    </div>
+                }
 
+            </div>
+        </div>
+    </div>
+    <div class="mg-top">
+        <i class="fas fa-arrow-left">@Html.ActionLink("Trở về trang quản lí khóa học", "Index", null, htmlAttributes: new { @class = "btn btn-default" })</i>
+    </div>
+</div>
 

@@ -1,0 +1,19 @@
+﻿.mg-top {
+    margin-top: 20px;
+}
+.mg-head{
+    margin-bottom:10px;
+    font-size: 20px;
+    font-weight:bold;
+}
+.bg-create {
+    background-color: #FADBA6;
+}
+
+.thongbao p{
+    font-family: 'Sans Serif Collection';
+    font-size: 20px;
+    font-weight:bold;
+    font-style: italic;
+    color: red;
+}
