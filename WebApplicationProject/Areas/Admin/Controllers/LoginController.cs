@@ -20,14 +20,18 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             return View();
         }
 
+        //Partial Nav Admin
+        [ChildActionOnly]
         public ActionResult NavAdmin()
         {
-            return View();
+            return PartialView("NavAdmin");
         }
 
+        //Partial NavRight
+        [ChildActionOnly]
         public ActionResult NavRight()
         {
-            return View();
+            return PartialView("NavRight");
         }
     }
 }

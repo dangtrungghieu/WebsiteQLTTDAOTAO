@@ -135,7 +135,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
-    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\User\Controllers\UserController.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,7 +180,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\CssAdmin.css" />
+    <Content Include="Content\StyleLoginUser.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\styleAdmin.css" />
@@ -249,9 +250,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\LayoutUser.cshtml" />
-    <Content Include="Areas\Admin\Views\Register\Register.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\LayoutLoginRegister.cshtml" />
     <Content Include="plugins\slick\fonts\slick.eot" />
     <Content Include="plugins\slick\fonts\slick.ttf" />
     <Content Include="plugins\slick\fonts\slick.woff" />
@@ -263,7 +262,10 @@
     <Content Include="Areas\Admin\Views\Shared\Layout_Admin.cshtml" />
     <Content Include="Areas\Admin\Views\Login\NavAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Login\NavRight.cshtml" />
-    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\User\Views\web.config" />
+    <Content Include="Areas\User\Views\Shared\LayoutLoginRegisterUser.cshtml" />
+    <Content Include="Areas\User\Views\User\Login.cshtml" />
+    <Content Include="Areas\User\Views\User\Register.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -274,7 +276,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\LoginScript.js" />
+    <Content Include="Scripts\ScriptLoginUser.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
@@ -298,6 +300,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\User\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
