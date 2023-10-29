@@ -8,15 +8,14 @@
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!--  css file link  -->
+    
     @Styles.Render("~/Content/cssProject")
 </head>
 <body>
-    
     <div class="container">
         @Html.Action("NavHeader", "Home")
         @RenderBody()
         @Html.Action("Footer", "Home")
-
     </div>
     <!--  js file link -->
     @Scripts.Render("~/Script/jsProject")

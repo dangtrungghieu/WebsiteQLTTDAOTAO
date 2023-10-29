@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplicationProject.Models;
+using WebApplicationProject.Model;
 using PagedList;
 
 namespace WebApplicationProject.Controllers
@@ -12,7 +12,7 @@ namespace WebApplicationProject.Controllers
     {
         // GET: Home
         //Khai bao Entities 
-        FinalProject db = new FinalProject();
+        FINALPROJECTEntities db = new FINALPROJECTEntities();
         public ActionResult Home()
         {
             return View();

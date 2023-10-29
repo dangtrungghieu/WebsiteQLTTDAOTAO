@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1492bb70b5294116b2ecff9b3dfd2a3d" Name="Diagram1" ZoomLevel="45">
+        <EntityTypeShape EntityType="FINALPROJECTModel.CAHOC" Width="1.5" PointX="12.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.CATHI" Width="1.5" PointX="12.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.CHAMCONG" Width="1.5" PointX="8.125" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.DANGKY" Width="1.5" PointX="6.5" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.DANHGIAKHOAHOC" Width="1.5" PointX="11.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.DonXinNghi" Width="1.5" PointX="6.5" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.HOCVIEN" Width="1.5" PointX="18.75" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.KETQUA" Width="1.5" PointX="14.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.KETQUAKHAOSAT" Width="1.5" PointX="11.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.KHAOSAT" Width="1.5" PointX="9.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.KHOAHOC" Width="1.5" PointX="9.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.LOAI" Width="1.5" PointX="12.5" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.LOAICATHI" Width="1.5" PointX="10.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.LOAINHANVIEN" Width="1.5" PointX="5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.LOAITHONGBAO" Width="1.5" PointX="10.25" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.LOP" Width="1.5" PointX="14.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.LUONG" Width="1.5" PointX="9.5" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.NHANVIEN" Width="1.5" PointX="7.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.NHAPHANG" Width="1.5" PointX="9.5" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.PHIEUTHU" Width="1.5" PointX="11.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.PHONGHOC" Width="1.5" PointX="12.5" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.PHONGTHI" Width="1.5" PointX="14.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.sysdiagrams" Width="1.5" PointX="19.375" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.TAIKHOAN" Width="1.5" PointX="16.5" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.THONGBAO" Width="1.5" PointX="12.5" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.YEUCAUHOCVIEN" Width="1.5" PointX="21" PointY="45.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINALPROJECTModel.YEUCAUNHANVIEN" Width="1.5" PointX="9.5" PointY="38.25" IsExpanded="true" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MACAHOC_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MACATHI_PHONGTHI" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MALOAICATHI_CATHI" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MANHANVIEN_CHAMCONG" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAHOCVIEN_DANGKY" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MALOP_DANGKY" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAHOCVIEN_DANHGIAKHOAHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAKHOAHOC_DANHGIAKHOAHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAHOCVIEN_DONXINNGHI" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MALOP_DONXINNGHI" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAHOCVIEN_KETQUA" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAHOCVIEN_KETQUAKHAOSAT" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAHOCVIEN_PHIEUTHU" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAHOCVIEN_YEUCAUHOCVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MALOP_HOCVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MATAIKHOAN_HOCVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAKHOAHOC_KETQUA" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAKHAOSAT_KETQUAKHAOSAT" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MANHANVIEN_KHAOSAT" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAKNHANVIEN_KHOAHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAKHOAHOC_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAKHOAHOC_PHIEUTHU" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAKHOAHOC_PHONGTHI" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_LOAILOP_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_LOAIPHONGHOC_PHONGHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MALOAINHANVIEN_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MALOAITHONGBAO_THONGBAO" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAGIANGVIEN_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAPHONGHOC_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MANHANVIEN_LUONG" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MANHANVIEN_NHAPHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MANHANVIEN_PHONGTHI" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MANHANVIEN_THONGBAO" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MANHANVIEN_YEUCAUNHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MATAIKHOAN_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="FINALPROJECTModel.FK_MAPHONGHOC_PHONGTHI" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

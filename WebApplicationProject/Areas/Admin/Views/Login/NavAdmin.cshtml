@@ -5,11 +5,14 @@
             <img src="~/images/Logo_Version1.png" width="200" />
         </div>
         <div class="list-group list-group-flush my-3">
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                <i class="fas fa-tachometer-alt me-2"></i>User
+            <a href="@Url.Action("Admin","Login")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class="fas fa-tachometer-alt me-2"></i>Trang chủ
             </a>
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                <i class="fas fa-project-diagram me-2"></i>Course
+                <i class="fas fa-tachometer-alt me-2"></i>Quản lý người dùng
+            </a>
+            <a href="@Url.Action("Index","Course")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class="fas fa-project-diagram me-2"></i>Quản lý khóa học
             </a>
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fas fa-chart-line me-2"></i>Analytics

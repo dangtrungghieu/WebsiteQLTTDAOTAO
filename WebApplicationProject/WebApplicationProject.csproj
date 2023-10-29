@@ -133,6 +133,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
     <Compile Include="Areas\User\Controllers\UserController.cs" />
@@ -141,38 +142,102 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310230729415_DatabaseVer_1.cs" />
-    <Compile Include="Migrations\202310230729415_DatabaseVer_1.Designer.cs">
-      <DependentUpon>202310230729415_DatabaseVer_1.cs</DependentUpon>
+    <Compile Include="Model\CAHOC.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\CAHOC.cs" />
-    <Compile Include="Models\CATHI.cs" />
-    <Compile Include="Models\CHAMCONG.cs" />
-    <Compile Include="Models\DANGKY.cs" />
-    <Compile Include="Models\DANHGIAKHOAHOC.cs" />
-    <Compile Include="Models\DonXinNghi.cs" />
-    <Compile Include="Models\FinalProject.cs" />
-    <Compile Include="Models\HOCVIEN.cs" />
-    <Compile Include="Models\KETQUA.cs" />
-    <Compile Include="Models\KETQUAKHAOSAT.cs" />
-    <Compile Include="Models\KHAOSAT.cs" />
-    <Compile Include="Models\KHOAHOC.cs" />
-    <Compile Include="Models\LOAI.cs" />
-    <Compile Include="Models\LOAICATHI.cs" />
-    <Compile Include="Models\LOAINHANVIEN.cs" />
-    <Compile Include="Models\LOAITHONGBAO.cs" />
-    <Compile Include="Models\LOP.cs" />
-    <Compile Include="Models\LUONG.cs" />
-    <Compile Include="Models\NHANVIEN.cs" />
-    <Compile Include="Models\NHAPHANG.cs" />
-    <Compile Include="Models\PHIEUTHU.cs" />
-    <Compile Include="Models\PHONGHOC.cs" />
-    <Compile Include="Models\PHONGTHI.cs" />
-    <Compile Include="Models\TAIKHOAN.cs" />
-    <Compile Include="Models\THONGBAO.cs" />
-    <Compile Include="Models\YEUCAUHOCVIEN.cs" />
-    <Compile Include="Models\YEUCAUNHANVIEN.cs" />
+    <Compile Include="Model\CATHI.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CHAMCONG.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DANGKY.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DANHGIAKHOAHOC.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DonXinNghi.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FinalProject.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalProject.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FinalProject.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FinalProject.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalProject.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HOCVIEN.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KETQUA.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KETQUAKHAOSAT.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KHAOSAT.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KHOAHOC.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LOAI.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LOAICATHI.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LOAINHANVIEN.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LOAITHONGBAO.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LOP.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LUONG.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHANVIEN.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHAPHANG.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHIEUTHU.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHONGHOC.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PHONGTHI.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TAIKHOAN.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THONGBAO.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\YEUCAUHOCVIEN.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\YEUCAUNHANVIEN.cs">
+      <DependentUpon>FinalProject.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +296,16 @@
     <Content Include="images\teacher-3.png" />
     <Content Include="images\teacher-4.png" />
     <Content Include="js\script.js" />
+    <Content Include="Model\FinalProject.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalProject.edmx</DependentUpon>
+      <LastGenOutput>FinalProject.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\FinalProject.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalProject.edmx</DependentUpon>
+      <LastGenOutput>FinalProject.cs</LastGenOutput>
+    </Content>
     <Content Include="plugins\animate\animate.css" />
     <Content Include="plugins\aos\aos.css" />
     <Content Include="plugins\aos\aos.js" />
@@ -252,7 +327,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\LayoutLoginRegister.cshtml" />
     <Content Include="plugins\slick\fonts\slick.eot" />
     <Content Include="plugins\slick\fonts\slick.ttf" />
     <Content Include="plugins\slick\fonts\slick.woff" />
@@ -268,6 +342,17 @@
     <Content Include="Areas\User\Views\Shared\LayoutLoginRegisterUser.cshtml" />
     <Content Include="Areas\User\Views\User\Login.cshtml" />
     <Content Include="Areas\User\Views\User\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\LayoutLoginRegister.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
+    <EntityDeploy Include="Model\FinalProject.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FinalProject.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\FinalProject.edmx.diagram">
+      <DependentUpon>FinalProject.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Login\SearchCourse.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -318,9 +403,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310230729415_DatabaseVer_1.resx">
-      <DependentUpon>202310230729415_DatabaseVer_1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
