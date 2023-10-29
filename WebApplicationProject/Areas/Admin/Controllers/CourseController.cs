@@ -22,6 +22,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             var khoahoc = from kh in db.KHOAHOC select kh;
             return View(khoahoc.OrderBy(n => n.MaKhoaHoc).ToPagedList(iPageNum, iSize));
         }
+        // GET: Admin/Course/Create
         [HttpGet]
         public ActionResult Create()
         {
@@ -65,6 +66,14 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             }
             return View();
         }
-        
+
+        // GET: Admin/Course/Delete
+        [HttpGet]
+        public ActionResult Details(int? maKhoaHoc)
+        {
+            var khoahoc = db.KHOAHOC.SingleOrDefault(n => n.MaKhoaHoc == maKhoaHoc);
+            return View(khoahoc);
+        }
+
     }
 }
