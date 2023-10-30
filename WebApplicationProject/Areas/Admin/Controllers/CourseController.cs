@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using WebApplicationProject.Model;
 using PagedList.Mvc;
 using System.IO;
+using System.Net;
 
 namespace WebApplicationProject.Areas.Admin.Controllers
 {
@@ -17,14 +18,14 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Index(int ?page, string strSearch)
         {
+            ViewBag.Search = strSearch;
+            var kq = db.KHOAHOC.Select(b => b);
             int iSize = 12;
             int iPageNum = (page ?? 1);
-            if (String.IsNullOrEmpty(strSearch))
+            if (!String.IsNullOrEmpty(strSearch))
             {
-                var khoahoc = from kh in db.KHOAHOC select kh;
-                return View(khoahoc.OrderBy(n => n.MaKhoaHoc).ToPagedList(iPageNum, iSize));
+                kq = kq.Where(b => b.TenKhoaHoc.Contains(strSearch));
             }
-            var kq = from s in db.KHOAHOC where s.TenKhoaHoc.Contains(strSearch) || s.MaKhoaHoc.ToString().Contains(strSearch) select s;
             return View(kq.OrderBy(s => s.MaKhoaHoc).ToPagedList(iPageNum, iSize));
         }
         // GET: Admin/Course/Create
@@ -79,6 +80,56 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             var khoahoc = db.KHOAHOC.Find(id);
             return View(khoahoc);
         }
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            KHOAHOC khoahoc = db.KHOAHOC.Find(id);
+            if (khoahoc == null)
+            {
+                return HttpNotFound();
+            }
+            return View(khoahoc);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Edit(FormCollection f, HttpPostedFileBase fFileUpload)
+        {
+            var maKhoaHoc = int.Parse(f["sMaKhoaHoc"]);
+            var ngayCapNhat = DateTime.Parse(f["sNgayCapNhat"]);
+            var ngayHienTai = DateTime.Now;
+            var khoahoc = db.KHOAHOC.SingleOrDefault(n => n.MaKhoaHoc == maKhoaHoc);
+            if (ngayCapNhat < ngayHienTai)
+            {
+                ViewBag.ThongBaoNgayCapNhat = "Ngày cập nhật không hợp lệ";
+            }
+            else if (ModelState.IsValid)
+            {
+                if (fFileUpload != null && ngayCapNhat >= ngayHienTai)
+                {
+                    var sFileName = Path.GetFileName(fFileUpload.FileName);
+                    var path = Path.Combine(Server.MapPath("~/images/"), sFileName);
+                    if (!System.IO.File.Exists(path))
+                    {
+                        fFileUpload.SaveAs(path);
+                        khoahoc.AnhKhoaHoc = sFileName;
+                    }
+                }
+                khoahoc.TenKhoaHoc = f["sTenKhoaHoc"];
+                khoahoc.MoTa = f["sMoTa"];
+                khoahoc.NgayTao = Convert.ToDateTime(f["sNgayCapNhat"]);
+                khoahoc.LePhi = int.Parse(f["sLePhi"]);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(khoahoc);
+        }
+
+
 
     }
 }

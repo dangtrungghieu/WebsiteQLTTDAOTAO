@@ -345,7 +345,6 @@
     <Content Include="Areas\User\Views\User\Register.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\LayoutLoginRegister.cshtml" />
     <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\SearchCourse.cshtml" />
     <Content Include="Areas\Admin\Views\Course\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Course\Details.cshtml" />
     <EntityDeploy Include="Model\FinalProject.edmx">
@@ -356,6 +355,7 @@
       <DependentUpon>FinalProject.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Teacher\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Course\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
