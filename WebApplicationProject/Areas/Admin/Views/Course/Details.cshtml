@@ -1,8 +1,49 @@
 ﻿@model WebApplicationProject.Model.KHOAHOC
+
 @{
     ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
 }
+
+<div class="container">
+    <h2 class="text-center">Details</h2>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <img src="~/images/@Model.AnhKhoaHoc" alt="@Model.TenKhoaHoc" class="img-responsive" style="max-height: 300px; max-width: 100%;" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h4 class="tenkhoahoc" style="text-align: center; margin-top: 20px;">
+                @Html.DisplayFor(model => model.TenKhoaHoc)
+            </h4>
+            <div class="Motakhoahoc" style="margin-top: 20px;">
+                <p>
+                    <strong style="font-size: 16px;">Giảng viên:</strong> @Html.Raw(Model.NHANVIEN.TenNhanVien.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
+                </p>
+                <p>
+                    <strong style="font-size: 16px;">Mô tả:</strong> @Html.Raw(Model.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
+                </p>
+            </div>
+            <p class="ngaycapnhat" style="font-weight: bold; font-size: 16px;">Ngày tạo: @Html.FormatValue(Model.NgayTao, "{0:dd/MM/yyyy}")</p>
+            <p class="giaban" style="font-weight: bold; font-size: 16px;">Lệ Phí: @Html.FormatValue(Model.LePhi, "{0:#,##0}")</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center" style="margin-top: 20px;">
+            <button class="btn btn-warning">
+                <a href="@Url.Action("Index")" class="no-underline" style="text-decoration: none; color: white;">Back to List</a>
+            </button>
+            <button class="btn btn-warning">
+                <a href="@Url.Action("Edit")" class="no-underline" style="text-decoration: none; color: white;">Edit</a>
+            </button>
+        </div>
+    </div>
+</div>
+
 
 
 

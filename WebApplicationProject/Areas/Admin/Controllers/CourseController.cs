@@ -74,9 +74,9 @@ namespace WebApplicationProject.Areas.Admin.Controllers
 
         // GET: Admin/Course/Delete
         [HttpGet]
-        public ActionResult Details(int? maKhoaHoc)
+        public ActionResult Details(int? id)
         {
-            var khoahoc = db.KHOAHOC.SingleOrDefault(n => n.MaKhoaHoc == maKhoaHoc);
+            var khoahoc = db.KHOAHOC.Find(id);
             return View(khoahoc);
         }
 
