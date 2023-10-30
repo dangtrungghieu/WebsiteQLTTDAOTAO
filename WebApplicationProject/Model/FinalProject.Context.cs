@@ -47,7 +47,6 @@ namespace WebApplicationProject.Model
         public virtual DbSet<PHIEUTHU> PHIEUTHU { get; set; }
         public virtual DbSet<PHONGHOC> PHONGHOC { get; set; }
         public virtual DbSet<PHONGTHI> PHONGTHI { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOAN { get; set; }
         public virtual DbSet<THONGBAO> THONGBAO { get; set; }
         public virtual DbSet<YEUCAUHOCVIEN> YEUCAUHOCVIEN { get; set; }

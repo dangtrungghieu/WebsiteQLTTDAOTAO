@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FINALPROJECTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DA_QLTTDaoTaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CAHOC">
           <Key>
             <PropertyRef Name="MaCaHoc" />
@@ -236,16 +236,6 @@
           <Property Name="MaPhongHoc_PhongThi" Type="int" />
           <Property Name="MaCaThi_PhongThi" Type="int" />
           <Property Name="MaKhoaHoc_PhongThi" Type="int" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TAIKHOAN">
           <Key>
@@ -719,7 +709,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FINALPROJECTModelStoreContainer">
+        <EntityContainer Name="DA_QLTTDaoTaoModelStoreContainer">
           <EntitySet Name="CAHOC" EntityType="Self.CAHOC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CATHI" EntityType="Self.CATHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHAMCONG" EntityType="Self.CHAMCONG" Schema="dbo" store:Type="Tables" />
@@ -742,7 +732,6 @@
           <EntitySet Name="PHIEUTHU" EntityType="Self.PHIEUTHU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHONGHOC" EntityType="Self.PHONGHOC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHONGTHI" EntityType="Self.PHONGTHI" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THONGBAO" EntityType="Self.THONGBAO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YEUCAUHOCVIEN" EntityType="Self.YEUCAUHOCVIEN" Schema="dbo" store:Type="Tables" />
@@ -896,7 +885,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="FINALPROJECTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DA_QLTTDaoTaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CAHOC">
           <Key>
             <PropertyRef Name="MaCaHoc" />
@@ -1194,16 +1183,6 @@
           <NavigationProperty Name="KHOAHOC" Relationship="Self.FK_MAKHOAHOC_PHONGTHI" FromRole="PHONGTHI" ToRole="KHOAHOC" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_MANHANVIEN_PHONGTHI" FromRole="PHONGTHI" ToRole="NHANVIEN" />
           <NavigationProperty Name="PHONGHOC" Relationship="Self.FK_MAPHONGHOC_PHONGTHI" FromRole="PHONGTHI" ToRole="PHONGHOC" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TAIKHOAN">
           <Key>
@@ -1706,7 +1685,6 @@
           <EntitySet Name="PHIEUTHU" EntityType="Self.PHIEUTHU" />
           <EntitySet Name="PHONGHOC" EntityType="Self.PHONGHOC" />
           <EntitySet Name="PHONGTHI" EntityType="Self.PHONGTHI" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" />
           <EntitySet Name="THONGBAO" EntityType="Self.THONGBAO" />
           <EntitySet Name="YEUCAUHOCVIEN" EntityType="Self.YEUCAUHOCVIEN" />
@@ -1861,9 +1839,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FINALPROJECTModelStoreContainer" CdmEntityContainer="FINALPROJECTEntities">
+        <EntityContainerMapping StorageEntityContainer="DA_QLTTDaoTaoModelStoreContainer" CdmEntityContainer="FINALPROJECTEntities">
           <EntitySetMapping Name="CAHOC">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.CAHOC">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.CAHOC">
               <MappingFragment StoreEntitySet="CAHOC">
                 <ScalarProperty Name="MaCaHoc" ColumnName="MaCaHoc" />
                 <ScalarProperty Name="TenCaHoc" ColumnName="TenCaHoc" />
@@ -1874,7 +1852,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CATHI">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.CATHI">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.CATHI">
               <MappingFragment StoreEntitySet="CATHI">
                 <ScalarProperty Name="MaCaThi" ColumnName="MaCaThi" />
                 <ScalarProperty Name="TenCaThi" ColumnName="TenCaThi" />
@@ -1885,7 +1863,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CHAMCONG">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.CHAMCONG">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.CHAMCONG">
               <MappingFragment StoreEntitySet="CHAMCONG">
                 <ScalarProperty Name="MaChamCong" ColumnName="MaChamCong" />
                 <ScalarProperty Name="NgayChamCong" ColumnName="NgayChamCong" />
@@ -1895,7 +1873,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DANGKY">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.DANGKY">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.DANGKY">
               <MappingFragment StoreEntitySet="DANGKY">
                 <ScalarProperty Name="MaDangKy" ColumnName="MaDangKy" />
                 <ScalarProperty Name="NgayDangKy" ColumnName="NgayDangKy" />
@@ -1907,7 +1885,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DANHGIAKHOAHOC">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.DANHGIAKHOAHOC">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.DANHGIAKHOAHOC">
               <MappingFragment StoreEntitySet="DANHGIAKHOAHOC">
                 <ScalarProperty Name="MaDanhGiaKhoaHoc" ColumnName="MaDanhGiaKhoaHoc" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
@@ -1918,7 +1896,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DonXinNghi">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.DonXinNghi">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.DonXinNghi">
               <MappingFragment StoreEntitySet="DonXinNghi">
                 <ScalarProperty Name="MaDonXinNghi" ColumnName="MaDonXinNghi" />
                 <ScalarProperty Name="LyDo" ColumnName="LyDo" />
@@ -1931,7 +1909,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HOCVIEN">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.HOCVIEN">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.HOCVIEN">
               <MappingFragment StoreEntitySet="HOCVIEN">
                 <ScalarProperty Name="MaHocVien" ColumnName="MaHocVien" />
                 <ScalarProperty Name="TenHocVien" ColumnName="TenHocVien" />
@@ -1946,7 +1924,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KETQUA">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.KETQUA">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.KETQUA">
               <MappingFragment StoreEntitySet="KETQUA">
                 <ScalarProperty Name="MaKetQua" ColumnName="MaKetQua" />
                 <ScalarProperty Name="DiemSo" ColumnName="DiemSo" />
@@ -1957,7 +1935,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KETQUAKHAOSAT">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.KETQUAKHAOSAT">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.KETQUAKHAOSAT">
               <MappingFragment StoreEntitySet="KETQUAKHAOSAT">
                 <ScalarProperty Name="MaKetQuaKhaoSat" ColumnName="MaKetQuaKhaoSat" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
@@ -1968,7 +1946,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KHAOSAT">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.KHAOSAT">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.KHAOSAT">
               <MappingFragment StoreEntitySet="KHAOSAT">
                 <ScalarProperty Name="MaKhaoSat" ColumnName="MaKhaoSat" />
                 <ScalarProperty Name="TenKhaoSat" ColumnName="TenKhaoSat" />
@@ -1980,7 +1958,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KHOAHOC">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.KHOAHOC">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.KHOAHOC">
               <MappingFragment StoreEntitySet="KHOAHOC">
                 <ScalarProperty Name="MaKhoaHoc" ColumnName="MaKhoaHoc" />
                 <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
@@ -1993,7 +1971,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOAI">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.LOAI">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.LOAI">
               <MappingFragment StoreEntitySet="LOAI">
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
@@ -2001,7 +1979,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOAICATHI">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.LOAICATHI">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.LOAICATHI">
               <MappingFragment StoreEntitySet="LOAICATHI">
                 <ScalarProperty Name="MaLoaiCaThi" ColumnName="MaLoaiCaThi" />
                 <ScalarProperty Name="TenLoaiCaThi" ColumnName="TenLoaiCaThi" />
@@ -2009,7 +1987,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOAINHANVIEN">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.LOAINHANVIEN">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.LOAINHANVIEN">
               <MappingFragment StoreEntitySet="LOAINHANVIEN">
                 <ScalarProperty Name="MaLoaiNhanVien" ColumnName="MaLoaiNhanVien" />
                 <ScalarProperty Name="TenLoaiNhanVien" ColumnName="TenLoaiNhanVien" />
@@ -2017,7 +1995,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOAITHONGBAO">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.LOAITHONGBAO">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.LOAITHONGBAO">
               <MappingFragment StoreEntitySet="LOAITHONGBAO">
                 <ScalarProperty Name="MaLoaiThongBao" ColumnName="MaLoaiThongBao" />
                 <ScalarProperty Name="TenLoaiThongBao" ColumnName="TenLoaiThongBao" />
@@ -2025,7 +2003,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOP">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.LOP">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.LOP">
               <MappingFragment StoreEntitySet="LOP">
                 <ScalarProperty Name="MaLop" ColumnName="MaLop" />
                 <ScalarProperty Name="TenLop" ColumnName="TenLop" />
@@ -2040,7 +2018,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LUONG">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.LUONG">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.LUONG">
               <MappingFragment StoreEntitySet="LUONG">
                 <ScalarProperty Name="MaLuong" ColumnName="MaLuong" />
                 <ScalarProperty Name="SoNgayCong" ColumnName="SoNgayCong" />
@@ -2052,7 +2030,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NHANVIEN">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.NHANVIEN">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.NHANVIEN">
               <MappingFragment StoreEntitySet="NHANVIEN">
                 <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
                 <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
@@ -2070,7 +2048,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NHAPHANG">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.NHAPHANG">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.NHAPHANG">
               <MappingFragment StoreEntitySet="NHAPHANG">
                 <ScalarProperty Name="MaNhapHang" ColumnName="MaNhapHang" />
                 <ScalarProperty Name="LoaiVatTu" ColumnName="LoaiVatTu" />
@@ -2082,7 +2060,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHIEUTHU">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.PHIEUTHU">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.PHIEUTHU">
               <MappingFragment StoreEntitySet="PHIEUTHU">
                 <ScalarProperty Name="MaPhieuThu" ColumnName="MaPhieuThu" />
                 <ScalarProperty Name="SoTien" ColumnName="SoTien" />
@@ -2093,7 +2071,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHONGHOC">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.PHONGHOC">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.PHONGHOC">
               <MappingFragment StoreEntitySet="PHONGHOC">
                 <ScalarProperty Name="MaPhongHoc" ColumnName="MaPhongHoc" />
                 <ScalarProperty Name="TenPhongHoc" ColumnName="TenPhongHoc" />
@@ -2104,7 +2082,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHONGTHI">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.PHONGTHI">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.PHONGTHI">
               <MappingFragment StoreEntitySet="PHONGTHI">
                 <ScalarProperty Name="MaPhongThi" ColumnName="MaPhongThi" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
@@ -2116,19 +2094,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TAIKHOAN">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.TAIKHOAN">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.TAIKHOAN">
               <MappingFragment StoreEntitySet="TAIKHOAN">
                 <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -2137,7 +2104,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="THONGBAO">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.THONGBAO">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.THONGBAO">
               <MappingFragment StoreEntitySet="THONGBAO">
                 <ScalarProperty Name="MaThongBao" ColumnName="MaThongBao" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
@@ -2149,7 +2116,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="YEUCAUHOCVIEN">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.YEUCAUHOCVIEN">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.YEUCAUHOCVIEN">
               <MappingFragment StoreEntitySet="YEUCAUHOCVIEN">
                 <ScalarProperty Name="MaYeuCau" ColumnName="MaYeuCau" />
                 <ScalarProperty Name="TenYeuCau" ColumnName="TenYeuCau" />
@@ -2161,7 +2128,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="YEUCAUNHANVIEN">
-            <EntityTypeMapping TypeName="FINALPROJECTModel.YEUCAUNHANVIEN">
+            <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.YEUCAUNHANVIEN">
               <MappingFragment StoreEntitySet="YEUCAUNHANVIEN">
                 <ScalarProperty Name="MaYeuCauNhanVien" ColumnName="MaYeuCauNhanVien" />
                 <ScalarProperty Name="TenYeuCauNhanVien" ColumnName="TenYeuCauNhanVien" />

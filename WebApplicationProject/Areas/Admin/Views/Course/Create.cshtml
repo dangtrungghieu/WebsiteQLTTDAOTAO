@@ -3,7 +3,6 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
 }
-<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 <div class="container-fluid px-4 bg-create">
     <div class="row g-3 my-2">
         <h1 class="well" style="text-align:center">THÊM KHÓA HỌC MỚI</h1>
@@ -23,7 +22,13 @@
                         <div class="form-group">
                             <label class="mg-head">Mô tả</label>
                             <textarea placeholder="Nhập mô tả ở đây..." rows="3" class="form-control"
-                                      id="mota" name="sMoTa" required>@ViewBag.MoTa</textarea>
+                                    id="mota"  name="sMoTa" required>@ViewBag.MoTa</textarea>
+                            <script>
+                                CKEDITOR.replace('sMoTa', {
+                                    // Provide the activation key.
+                                    licenseKey: 'YnBZZnlid1JmeFlKMTdXMGFwV3lRS3BsaEhYdUFrZExTSm1HM3d5Z3BFUDgyb21QM0ZEUDdQc2hvRUtZLU1qQXlNekV4TWprPQ==',
+                                });
+                            </script>
                         </div>
                         @*<div class="row">
                     <div class="col-sm-4 form-group">

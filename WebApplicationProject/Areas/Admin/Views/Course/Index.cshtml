@@ -5,13 +5,22 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
 }
+
 <div class="container-fluid px-4">
     <div class="row g-3 my-2">
         <!--Thêm mới-->
         <div>
             @Html.ActionLink("Thêm mới", "Create", null, htmlAttributes: new { @class = "btn btn-danger" })
         </div>
-            <!--Thêm  tìm kiếm vào đây-->
+        <!--Thêm  tìm kiếm vào đây-->
+        <div class="body-search">
+            <div class="box-search">
+                <input type="text" placeholder="Search... " value="@ViewBag.Search" name="strSearch">
+                <a href="@Url.Action("Index","Course")">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="row g-3 my-2">
         <h2>QUẢN LÝ KHÓA HỌC</h2>

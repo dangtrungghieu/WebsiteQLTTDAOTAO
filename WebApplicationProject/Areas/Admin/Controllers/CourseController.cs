@@ -15,12 +15,17 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         FINALPROJECTEntities db = new FINALPROJECTEntities();
         // GET: Admin/Course
         [HttpGet]
-        public ActionResult Index(int ?page)
+        public ActionResult Index(int ?page, string strSearch)
         {
             int iSize = 12;
             int iPageNum = (page ?? 1);
-            var khoahoc = from kh in db.KHOAHOC select kh;
-            return View(khoahoc.OrderBy(n => n.MaKhoaHoc).ToPagedList(iPageNum, iSize));
+            if (String.IsNullOrEmpty(strSearch))
+            {
+                var khoahoc = from kh in db.KHOAHOC select kh;
+                return View(khoahoc.OrderBy(n => n.MaKhoaHoc).ToPagedList(iPageNum, iSize));
+            }
+            var kq = from s in db.KHOAHOC where s.TenKhoaHoc.Contains(strSearch) || s.MaKhoaHoc.ToString().Contains(strSearch) select s;
+            return View(kq.OrderBy(s => s.MaKhoaHoc).ToPagedList(iPageNum, iSize));
         }
         // GET: Admin/Course/Create
         [HttpGet]
@@ -34,7 +39,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         {
             var ngayTao = DateTime.Parse(f["sNgayTao"]);
             var ngayHienTai = DateTime.Now;
-             if (ngayTao != ngayHienTai)
+             if (ngayTao < ngayHienTai)
             {
                 ViewBag.AnhBia = f["sAnhBia"];
                 ViewBag.ThongBaoNgayTao = "Ngày tạo không phù hợp.";
