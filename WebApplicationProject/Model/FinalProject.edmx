@@ -130,6 +130,8 @@
           </Key>
           <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenLoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="MaNhanVien_Loai" Type="int" />
+          <Property Name="NgayTao" Type="date" />
         </EntityType>
         <EntityType Name="LOAICATHI">
           <Key>
@@ -224,6 +226,8 @@
           <Property Name="SucChua" Type="int" Nullable="false" />
           <Property Name="TinhTrang" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="MaLoaiPhong_PhongHoc" Type="int" />
+          <Property Name="MaNhanVien_PhongHoc" Type="int" />
+          <Property Name="NgayTao" Type="date" />
         </EntityType>
         <EntityType Name="PHONGTHI">
           <Key>
@@ -601,6 +605,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MANHANVIEN_LOAI">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="LOAI" Type="Self.LOAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="LOAI">
+              <PropertyRef Name="MaNhanVien_Loai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MANHANVIEN_LUONG">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
           <End Role="LUONG" Type="Self.LUONG" Multiplicity="*" />
@@ -622,6 +638,18 @@
             </Principal>
             <Dependent Role="NHAPHANG">
               <PropertyRef Name="MaNhanVien_NhapHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MANHANVIEN_PHONGHOC">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="PHONGHOC" Type="Self.PHONGHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="PHONGHOC">
+              <PropertyRef Name="MaNhanVien_PhongHoc" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -844,6 +872,10 @@
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="KHAOSAT" EntitySet="KHAOSAT" />
           </AssociationSet>
+          <AssociationSet Name="FK_MANHANVIEN_LOAI" Association="Self.FK_MANHANVIEN_LOAI">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="LOAI" EntitySet="LOAI" />
+          </AssociationSet>
           <AssociationSet Name="FK_MANHANVIEN_LUONG" Association="Self.FK_MANHANVIEN_LUONG">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="LUONG" EntitySet="LUONG" />
@@ -851,6 +883,10 @@
           <AssociationSet Name="FK_MANHANVIEN_NHAPHANG" Association="Self.FK_MANHANVIEN_NHAPHANG">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="NHAPHANG" EntitySet="NHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MANHANVIEN_PHONGHOC" Association="Self.FK_MANHANVIEN_PHONGHOC">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="PHONGHOC" EntitySet="PHONGHOC" />
           </AssociationSet>
           <AssociationSet Name="FK_MANHANVIEN_PHONGTHI" Association="Self.FK_MANHANVIEN_PHONGTHI">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
@@ -1042,8 +1078,11 @@
           </Key>
           <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenLoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaNhanVien_Loai" Type="Int32" />
+          <Property Name="NgayTao" Type="DateTime" Precision="0" />
           <NavigationProperty Name="LOP" Relationship="Self.FK_LOAILOP_LOP" FromRole="LOAI" ToRole="LOP" />
           <NavigationProperty Name="PHONGHOC" Relationship="Self.FK_LOAIPHONGHOC_PHONGHOC" FromRole="LOAI" ToRole="PHONGHOC" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_MANHANVIEN_LOAI" FromRole="LOAI" ToRole="NHANVIEN" />
         </EntityType>
         <EntityType Name="LOAICATHI">
           <Key>
@@ -1122,10 +1161,12 @@
           <NavigationProperty Name="CHAMCONG" Relationship="Self.FK_MANHANVIEN_CHAMCONG" FromRole="NHANVIEN" ToRole="CHAMCONG" />
           <NavigationProperty Name="KHAOSAT" Relationship="Self.FK_MANHANVIEN_KHAOSAT" FromRole="NHANVIEN" ToRole="KHAOSAT" />
           <NavigationProperty Name="KHOAHOC" Relationship="Self.FK_MAKNHANVIEN_KHOAHOC" FromRole="NHANVIEN" ToRole="KHOAHOC" />
+          <NavigationProperty Name="LOAI" Relationship="Self.FK_MANHANVIEN_LOAI" FromRole="NHANVIEN" ToRole="LOAI" />
           <NavigationProperty Name="LOAINHANVIEN" Relationship="Self.FK_MALOAINHANVIEN_NHANVIEN" FromRole="NHANVIEN" ToRole="LOAINHANVIEN" />
           <NavigationProperty Name="LOP" Relationship="Self.FK_MAGIANGVIEN_LOP" FromRole="NHANVIEN" ToRole="LOP" />
           <NavigationProperty Name="LUONG" Relationship="Self.FK_MANHANVIEN_LUONG" FromRole="NHANVIEN" ToRole="LUONG" />
           <NavigationProperty Name="NHAPHANG" Relationship="Self.FK_MANHANVIEN_NHAPHANG" FromRole="NHANVIEN" ToRole="NHAPHANG" />
+          <NavigationProperty Name="PHONGHOC" Relationship="Self.FK_MANHANVIEN_PHONGHOC" FromRole="NHANVIEN" ToRole="PHONGHOC" />
           <NavigationProperty Name="PHONGTHI" Relationship="Self.FK_MANHANVIEN_PHONGTHI" FromRole="NHANVIEN" ToRole="PHONGTHI" />
           <NavigationProperty Name="THONGBAO" Relationship="Self.FK_MANHANVIEN_THONGBAO" FromRole="NHANVIEN" ToRole="THONGBAO" />
           <NavigationProperty Name="YEUCAUNHANVIEN" Relationship="Self.FK_MANHANVIEN_YEUCAUNHANVIEN" FromRole="NHANVIEN" ToRole="YEUCAUNHANVIEN" />
@@ -1164,8 +1205,11 @@
           <Property Name="SucChua" Type="Int32" Nullable="false" />
           <Property Name="TinhTrang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaLoaiPhong_PhongHoc" Type="Int32" />
+          <Property Name="MaNhanVien_PhongHoc" Type="Int32" />
+          <Property Name="NgayTao" Type="DateTime" Precision="0" />
           <NavigationProperty Name="LOAI" Relationship="Self.FK_LOAIPHONGHOC_PHONGHOC" FromRole="PHONGHOC" ToRole="LOAI" />
           <NavigationProperty Name="LOP" Relationship="Self.FK_MAPHONGHOC_LOP" FromRole="PHONGHOC" ToRole="LOP" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_MANHANVIEN_PHONGHOC" FromRole="PHONGHOC" ToRole="NHANVIEN" />
           <NavigationProperty Name="PHONGTHI" Relationship="Self.FK_MAPHONGHOC_PHONGTHI" FromRole="PHONGHOC" ToRole="PHONGTHI" />
         </EntityType>
         <EntityType Name="PHONGTHI">
@@ -1530,6 +1574,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MANHANVIEN_LOAI">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="LOAI" Type="Self.LOAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="LOAI">
+              <PropertyRef Name="MaNhanVien_Loai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MALOAINHANVIEN_NHANVIEN">
           <End Role="LOAINHANVIEN" Type="Self.LOAINHANVIEN" Multiplicity="0..1" />
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
@@ -1599,6 +1655,18 @@
             </Principal>
             <Dependent Role="NHAPHANG">
               <PropertyRef Name="MaNhanVien_NhapHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MANHANVIEN_PHONGHOC">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="PHONGHOC" Type="Self.PHONGHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="PHONGHOC">
+              <PropertyRef Name="MaNhanVien_PhongHoc" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1789,6 +1857,10 @@
             <End Role="LOAI" EntitySet="LOAI" />
             <End Role="PHONGHOC" EntitySet="PHONGHOC" />
           </AssociationSet>
+          <AssociationSet Name="FK_MANHANVIEN_LOAI" Association="Self.FK_MANHANVIEN_LOAI">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="LOAI" EntitySet="LOAI" />
+          </AssociationSet>
           <AssociationSet Name="FK_MALOAINHANVIEN_NHANVIEN" Association="Self.FK_MALOAINHANVIEN_NHANVIEN">
             <End Role="LOAINHANVIEN" EntitySet="LOAINHANVIEN" />
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
@@ -1812,6 +1884,10 @@
           <AssociationSet Name="FK_MANHANVIEN_NHAPHANG" Association="Self.FK_MANHANVIEN_NHAPHANG">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="NHAPHANG" EntitySet="NHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MANHANVIEN_PHONGHOC" Association="Self.FK_MANHANVIEN_PHONGHOC">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="PHONGHOC" EntitySet="PHONGHOC" />
           </AssociationSet>
           <AssociationSet Name="FK_MANHANVIEN_PHONGTHI" Association="Self.FK_MANHANVIEN_PHONGTHI">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
@@ -1975,6 +2051,8 @@
               <MappingFragment StoreEntitySet="LOAI">
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+                <ScalarProperty Name="MaNhanVien_Loai" ColumnName="MaNhanVien_Loai" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2078,6 +2156,8 @@
                 <ScalarProperty Name="SucChua" ColumnName="SucChua" />
                 <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
                 <ScalarProperty Name="MaLoaiPhong_PhongHoc" ColumnName="MaLoaiPhong_PhongHoc" />
+                <ScalarProperty Name="MaNhanVien_PhongHoc" ColumnName="MaNhanVien_PhongHoc" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

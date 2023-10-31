@@ -8,6 +8,7 @@
 }
 .bg-create {
     background-color: #FADBA6;
+    border-radius: 30px;
 }
 
 .thongbao p{
@@ -47,3 +48,6 @@
         border-radius: 20px;
         width: 80px;
     }
+.no-underline {
+    text-decoration: none;
+}

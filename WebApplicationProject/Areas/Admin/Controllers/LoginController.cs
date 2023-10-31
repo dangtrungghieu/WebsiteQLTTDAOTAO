@@ -50,5 +50,10 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public ActionResult FooterAdmin()
+        {
+            return View();
+        }
     }
 }

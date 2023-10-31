@@ -23,10 +23,13 @@ namespace WebApplicationProject.Model
     
         public int MaLoai { get; set; }
         public string TenLoai { get; set; }
+        public Nullable<int> MaNhanVien_Loai { get; set; }
+        public Nullable<System.DateTime> NgayTao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LOP> LOP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHONGHOC> PHONGHOC { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

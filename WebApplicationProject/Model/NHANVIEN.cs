@@ -20,9 +20,11 @@ namespace WebApplicationProject.Model
             this.CHAMCONG = new HashSet<CHAMCONG>();
             this.KHAOSAT = new HashSet<KHAOSAT>();
             this.KHOAHOC = new HashSet<KHOAHOC>();
+            this.LOAI = new HashSet<LOAI>();
             this.LOP = new HashSet<LOP>();
             this.LUONG = new HashSet<LUONG>();
             this.NHAPHANG = new HashSet<NHAPHANG>();
+            this.PHONGHOC = new HashSet<PHONGHOC>();
             this.PHONGTHI = new HashSet<PHONGTHI>();
             this.THONGBAO = new HashSet<THONGBAO>();
             this.YEUCAUNHANVIEN = new HashSet<YEUCAUNHANVIEN>();
@@ -47,6 +49,8 @@ namespace WebApplicationProject.Model
         public virtual ICollection<KHAOSAT> KHAOSAT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KHOAHOC> KHOAHOC { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LOAI> LOAI { get; set; }
         public virtual LOAINHANVIEN LOAINHANVIEN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LOP> LOP { get; set; }
@@ -54,6 +58,8 @@ namespace WebApplicationProject.Model
         public virtual ICollection<LUONG> LUONG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHAPHANG> NHAPHANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHONGHOC> PHONGHOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHONGTHI> PHONGTHI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

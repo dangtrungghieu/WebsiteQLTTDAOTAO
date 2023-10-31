@@ -4,33 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="34f229dfe31c461db87f5bdb4ebc0560" Name="Diagram1" ZoomLevel="40">
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CAHOC" Width="1.5" PointX="11.25" PointY="19.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CATHI" Width="1.5" PointX="11.25" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CHAMCONG" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DANGKY" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DANHGIAKHOAHOC" Width="1.5" PointX="10.5" PointY="26.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DonXinNghi" Width="1.5" PointX="5.25" PointY="31.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.HOCVIEN" Width="1.5" PointX="3" PointY="25.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KETQUA" Width="1.5" PointX="13.5" PointY="26.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KETQUAKHAOSAT" Width="1.5" PointX="10.5" PointY="22.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KHAOSAT" Width="1.5" PointX="8.25" PointY="21.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KHOAHOC" Width="1.5" PointX="8.25" PointY="24.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAI" Width="1.5" PointX="11.25" PointY="37.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAICATHI" Width="1.5" PointX="9" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAINHANVIEN" Width="1.5" PointX="3.75" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAITHONGBAO" Width="1.5" PointX="9" PointY="35" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOP" Width="1.5" PointX="13.5" PointY="29.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LUONG" Width="1.5" PointX="8.25" PointY="28.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.NHANVIEN" Width="1.5" PointX="6" PointY="25.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.NHAPHANG" Width="1.5" PointX="8.25" PointY="31.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.PHIEUTHU" Width="1.5" PointX="10.5" PointY="30.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.PHONGHOC" Width="1.5" PointX="11.25" PointY="39.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.PHONGTHI" Width="1.5" PointX="13.5" PointY="22" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.TAIKHOAN" Width="1.5" PointX="0.75" PointY="26.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.THONGBAO" Width="1.5" PointX="11.25" PointY="33.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.YEUCAUHOCVIEN" Width="1.5" PointX="5.25" PointY="45.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.YEUCAUNHANVIEN" Width="1.5" PointX="8.25" PointY="38.25" IsExpanded="true" />
+      <Diagram DiagramId="4e2c352818b84e749e87fa9c5a49e939" Name="Diagram1" ZoomLevel="40">
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CAHOC" Width="1.5" PointX="11.25" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CATHI" Width="1.5" PointX="11.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CHAMCONG" Width="1.5" PointX="8.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DANGKY" Width="1.5" PointX="5.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DANHGIAKHOAHOC" Width="1.5" PointX="10.5" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DonXinNghi" Width="1.5" PointX="5.25" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.HOCVIEN" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KETQUA" Width="1.5" PointX="13.5" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KETQUAKHAOSAT" Width="1.5" PointX="10.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KHAOSAT" Width="1.5" PointX="8.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KHOAHOC" Width="1.5" PointX="8.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAI" Width="1.5" PointX="8.25" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAICATHI" Width="1.5" PointX="9" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAINHANVIEN" Width="1.5" PointX="3.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAITHONGBAO" Width="1.5" PointX="9" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOP" Width="1.5" PointX="13.5" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LUONG" Width="1.5" PointX="8.25" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.NHANVIEN" Width="1.5" PointX="6" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.NHAPHANG" Width="1.5" PointX="8.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.PHIEUTHU" Width="1.5" PointX="10.5" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.PHONGHOC" Width="1.5" PointX="16.5" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.PHONGTHI" Width="1.5" PointX="13.5" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.TAIKHOAN" Width="1.5" PointX="0.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.THONGBAO" Width="1.5" PointX="11.25" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.YEUCAUHOCVIEN" Width="1.5" PointX="5.25" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.YEUCAUNHANVIEN" Width="1.5" PointX="8.25" PointY="42" IsExpanded="true" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MACAHOC_LOP" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MACATHI_PHONGTHI" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MALOAICATHI_CATHI" ManuallyRouted="false" />
@@ -56,12 +56,14 @@
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MAKHOAHOC_PHONGTHI" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_LOAILOP_LOP" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_LOAIPHONGHOC_PHONGHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MANHANVIEN_LOAI" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MALOAINHANVIEN_NHANVIEN" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MALOAITHONGBAO_THONGBAO" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MAGIANGVIEN_LOP" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MAPHONGHOC_LOP" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MANHANVIEN_LUONG" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MANHANVIEN_NHAPHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MANHANVIEN_PHONGHOC" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MANHANVIEN_PHONGTHI" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MANHANVIEN_THONGBAO" ManuallyRouted="false" />
         <AssociationConnector Association="DA_QLTTDaoTaoModel.FK_MANHANVIEN_YEUCAUNHANVIEN" ManuallyRouted="false" />
