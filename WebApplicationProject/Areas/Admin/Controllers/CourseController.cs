@@ -1,13 +1,11 @@
 ﻿using PagedList;
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationProject.Model;
-using PagedList.Mvc;
-using System.IO;
-using System.Net;
 
 namespace WebApplicationProject.Areas.Admin.Controllers
 {
@@ -38,19 +36,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         [ValidateInput(false)]
         public ActionResult Create(FormCollection f, KHOAHOC kh, HttpPostedFileBase sAnhBia)
         {
-            var ngayTao = DateTime.Parse(f["sNgayTao"]);
-            var ngayHienTai = DateTime.Now;
-             if (ngayTao < ngayHienTai)
-            {
-                ViewBag.AnhBia = f["sAnhBia"];
-                ViewBag.ThongBaoNgayTao = "Ngày tạo không phù hợp.";
-                ViewBag.Ten = f["sTen"];
-                ViewBag.MoTa = f["sMoTa"];
-                ViewBag.LePhi = int.Parse(f["sLePhi"]);
-                return View();
-            }
-            else
-            {
+
                 if (ModelState.IsValid)
                 {
                     var sFileName = Path.GetFileName(sAnhBia.FileName);
@@ -69,7 +55,6 @@ namespace WebApplicationProject.Areas.Admin.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-            }
             return View();
         }
 
@@ -97,27 +82,23 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(FormCollection f, HttpPostedFileBase fFileUpload)
+        public ActionResult Edit(FormCollection f, HttpPostedFileBase sAnhBia)
         {
             var maKhoaHoc = int.Parse(f["sMaKhoaHoc"]);
             var ngayCapNhat = DateTime.Parse(f["sNgayCapNhat"]);
             var ngayHienTai = DateTime.Now;
             var khoahoc = db.KHOAHOC.SingleOrDefault(n => n.MaKhoaHoc == maKhoaHoc);
-            if (ngayCapNhat < ngayHienTai)
+           if (ModelState.IsValid)
             {
-                ViewBag.ThongBaoNgayCapNhat = "Ngày cập nhật không hợp lệ";
-            }
-            else if (ModelState.IsValid)
-            {
-                if (fFileUpload != null && ngayCapNhat >= ngayHienTai)
+                if (sAnhBia != null)
                 {
-                    var sFileName = Path.GetFileName(fFileUpload.FileName);
-                    var path = Path.Combine(Server.MapPath("~/images/"), sFileName);
+                    var sFileName = Path.GetFileName(sAnhBia.FileName);
+                    var path = Path.Combine(Server.MapPath("~/images"), sFileName);
                     if (!System.IO.File.Exists(path))
                     {
-                        fFileUpload.SaveAs(path);
-                        khoahoc.AnhKhoaHoc = sFileName;
+                        sAnhBia.SaveAs(path);
                     }
+                    khoahoc.AnhKhoaHoc = sFileName;
                 }
                 khoahoc.TenKhoaHoc = f["sTenKhoaHoc"];
                 khoahoc.MoTa = f["sMoTa"];
@@ -128,8 +109,43 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             }
             return View(khoahoc);
         }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var khoahoc = db.KHOAHOC.SingleOrDefault(n => n.MaKhoaHoc == id);
+            if (khoahoc == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(khoahoc);
+        }
 
-
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id, FormCollection f)
+        {
+            var khoahoc = db.KHOAHOC.SingleOrDefault(n => n.MaKhoaHoc == id);
+            if (khoahoc == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            //var ctdh = db.CHITIETDATHANG.Where(ct => ct.MaSach == id);
+            //if (ctdh.Count() > 0)
+            //{
+            //    ViewBag.ThongBao = "Sách hiện đang có trong bảng Chi Tiết Đặt Hàng <br>" + "Bạn vẫn muốn xóa quyển sách này chứ?";
+            //    return View(sach);
+            //}
+            //var vietsach = db.VIETSACH.Where(vs => vs.MaSach == id).ToList();
+            //if (vietsach != null)
+            //{
+            //    db.VIETSACH.RemoveRange(vietsach);
+            //    db.SaveChanges();
+            //}
+            db.KHOAHOC.Remove(khoahoc);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
     }
 }

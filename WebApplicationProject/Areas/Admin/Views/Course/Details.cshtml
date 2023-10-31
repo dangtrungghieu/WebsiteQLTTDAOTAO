@@ -6,7 +6,7 @@
 }
 
 <div class="container">
-    <h2 class="text-center">Details</h2>
+    <h2 class="text-center">CHI TIẾT KHÓA HỌC</h2>
 
     <div class="row">
         <div class="col-md-6 offset-md-3 text-center">
@@ -21,9 +21,6 @@
             </h4>
             <div class="Motakhoahoc" style="margin-top: 20px;">
                 <p>
-                    <strong style="font-size: 16px;">Giảng viên:</strong> @Html.Raw(Model.NHANVIEN.TenNhanVien.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
-                </p>
-                <p>
                     <strong style="font-size: 16px;">Mô tả:</strong> @Html.Raw(Model.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
                 </p>
             </div>
@@ -34,13 +31,12 @@
 
     <div class="row">
         <div class="col-md-12 text-center" style="margin-top: 20px;">
-            <button class="btn btn-warning">
-                <a href="@Url.Action("Index")" class="no-underline" style="text-decoration: none; color: white;">Back to List</a>
-            </button>
-            <button class="btn btn-warning">
-                <a href="@Url.Action("Edit")" class="no-underline" style="text-decoration: none; color: white;">Edit</a>
-            </button>
+            <a href="@Url.Action("Edit","Course", new { id = Model.MaKhoaHoc })" class="btn btn-warning" role="button">Sửa</a>
+            <a href="@Url.Action("Delete","Course", new { id = Model.MaKhoaHoc })" class="btn btn-danger" role="button">Xóa</a>
         </div>
+    </div>
+    <div class="mg-top">
+        <i class="fas fa-arrow-left">@Html.ActionLink("Trở về trang quản lí khóa học", "Index", null, htmlAttributes: new { @class = "btn btn-default" })</i>
     </div>
 </div>
 

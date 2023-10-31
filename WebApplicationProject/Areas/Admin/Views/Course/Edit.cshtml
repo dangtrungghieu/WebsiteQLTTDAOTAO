@@ -25,12 +25,17 @@
                     <div class="form-group">
                         <label class="mg-head">Mô tả</label>
                         <textarea rows="3" class="form-control" id="mota" name="sMoTa" required>@Model.MoTa</textarea>
-                        <script>
+                        @*<script>
                             CKEDITOR.replace('sMoTa', {
                                 // Provide the activation key.
                                 licenseKey: 'YnBZZnlid1JmeFlKMTdXMGFwV3lRS3BsaEhYdUFrZExTSm1HM3d5Z3BFUDgyb21QM0ZEUDdQc2hvRUtZLU1qQXlNekV4TWprPQ==',
+                                // Set the output format to plain text.
+                                format_output: 'text',
+                                // Disable automatic conversion of special characters to entities.
+                                basicEntities: false,
                             });
-                        </script>
+                        </script>*@
+
                     </div>
                     <div class="form-group">
                         <label class="mg-head">Lệ phí</label>
@@ -55,10 +60,7 @@
                     </div>
                     <div class="form-group">
                         <label class="mg-head">Ngày cập nhật</label>
-                        <input type="date" class="form-control" name="sNgayCapNhat" required>
-                        <div class="thongbao">
-                            <p>@ViewBag.ThongBaoNgayCapNhat</p>
-                        </div>
+                        <input type="text" class="form-control" name="sNgayCapNhat" value="@Convert.ToDateTime(DateTime.Now)" readonly>
                     </div>
                     <button type="submit" class="btn btn-success mg-top ">Lưu</button>
                 </div>
