@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,9 +11,17 @@ namespace WebApplicationProject.Areas.Admin.Controllers
     {
         FINALPROJECTEntities db = new FINALPROJECTEntities();
         // GET: Admin/PhongHoc
-        public ActionResult Index()
+        public ActionResult Index(int? page, string strSearch)
         {
-            return View();
+            var kq = db.PHONGHOC.Select(n => n);
+            int iSize = 10;
+            int iPageNum = (page ?? 1);
+            if (!String.IsNullOrEmpty(strSearch))
+            {
+                ViewBag.Search = strSearch;
+                kq = kq.Where(b => b.TenPhongHoc.Contains(strSearch));
+            }
+            return View(kq.OrderBy(s => s.MaPhongHoc).ToPagedList(iPageNum, iSize));
         }
 
         //GET: Admin/PhongHoc/Create

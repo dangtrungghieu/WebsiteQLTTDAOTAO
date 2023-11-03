@@ -1,6 +1,78 @@
-﻿
+﻿@using WebApplicationProject.Model;
+@using PagedList.Mvc;
+@model PagedList.PagedList<PHONGHOC>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
 }
-
+<div class="container-fluid px-3">
+    <div class="row g-3 my-2">
+        <!--Thêm  tìm kiếm vào đây-->
+        @using (Html.BeginForm("Index", "PhongHoc", FormMethod.Get))
+        {
+            <div class="body-search">
+                <div class="box-search">
+                    <input type="text" placeholder="Search... " value="@ViewBag.Search" name="strSearch">
+                    <input type="submit" value="Tìm" class="btn btn-primary" />
+                </div>
+            </div>
+        }
+        <!--Thêm mới-->
+        <div>
+            @Html.ActionLink("Thêm mới", "Create", null, htmlAttributes: new { @class = "btn btn-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h2 style="text-align:center">QUẢN LÝ PHÒNG HỌC</h2>
+            <div class="col">
+                <table class="table bg-white rounded shadow-sm  table-hover" style="text-align:center">
+                    <thead>
+                        <tr>
+                            <th scope="col" width="50">ID</th>
+                            <th scope="col">Tên phòng</th>
+                            <th scope="col">Loại phòng</th>
+                            <th scope="col">Sức chứa</th>
+                            <th scope="col">Ngày tạo</th>
+                            <th scope="col">Người tạo</th>
+                            <th scope="col">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@item.MaPhongHoc</th>
+                                <td>@item.TenPhongHoc</td>
+                                <td>@item.LOAI.TenLoai</td>
+                                <td>@item.SucChua</td>
+                                <td>@Html.FormatValue(@item.NgayTao, "{0:dd/MM/yyyy}") </td>
+                                <td>@item.NHANVIEN.TenNhanVien</td>
+                                <td>
+                                    <a href="@Url.Action("Edit","Course", new { id = item.MaPhongHoc })" class="btn btn-warning" role="button">Sửa</a>
+                                    <a href="@Url.Action("Details","Course", new { id = item.MaPhongHoc})" class="btn btn-primary" role="button">Chi tiết</a>
+                                    <a href="@Url.Action("Delete","Course", new { id = item.MaPhongHoc })" class="btn btn-danger" role="button">Xóa</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            @*Phần Menu phân trang*@
+            <link rel="stylesheet" href="~/Content/PagedList.css" />
+            <div class="MenuTrang">
+                @Html.PagedListPager(Model, page => Url.Action("Index", "PhongHoc", new { iMaKH = ViewBag.MaKH, page = page }))
+            </div>
+        </div>
+        <div class="col-md-4 bg-ChildMenu" style="height:580px">
+            <h4 style="text-align: center">DANH SÁCH LOẠI PHÒNG</h4>
+        </div>
+</div>
+</div>
+<style>
+    .MenuTrang {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
