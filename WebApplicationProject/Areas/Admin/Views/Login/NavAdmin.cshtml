@@ -1,49 +1,53 @@
-﻿<!-- Navigationbar -->
+﻿
+<!-- Navigationbar -->
 <div class="bg-white" id="sidebar-wrapper">
     <div class="sidebar-heading">
         <img src="~/images/Logo_Version1.png" width="200" />
+
     </div>
-    <hr />
+    <hr/>
     <div class="list-group list-group-flush my-3">
         <a href="@Url.Action("Admin","Login")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-house-user me-2"></i>Trang chủ
         </a>
-
-        <!-- Quản lý chung (Accordion) -->
-        <div class="accordion" id="quanlyChung">
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold" data-bs-toggle="collapse" href="#collapseQuanLyChung" role="button" aria-expanded="false" aria-controls="collapseQuanLyChung">
-                <i class="fas fa-users me-2"></i>Quản lý chung
-                <i class="fas fa-chevron-down float-end"></i>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-users me-2"></i>Quản lý người dùng
+        </a>
+        <a href="@Url.Action("Index","Course")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-window-restore me-2"></i>Quản lý khóa học
+        </a>
+        <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-flex justify-content-between" data-bs-toggle="collapse" href="#collapsePhongHoc" role="button" aria-expanded="false" aria-controls="collapsePhongHoc">
+            <span>
+                <i class="fas fa-laptop-house me-2"></i>Quản lý phòng
+            </span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+        <div id="collapsePhongHoc" class="collapse" data-parent="#quanlyChung">
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
+                Menu con 1
             </a>
-            <div id="collapseQuanLyChung" class="collapse" data-parent="#quanlyChung">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"style="margin-left: 20px">
-                    <i class="fas fa-users me-2"></i>Quản lý người dùng
-                </a>
-                <a href="@Url.Action("Index","Course")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px">
-                    <i class="fas fa-window-restore me-2"></i>Quản lý khóa học
-                </a>
-                <a href="@Url.Action("Index","PhongHoc")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px">
-                    <i class="fas fa-laptop-house me-2"></i>Quản lý phòng học
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px">
-                    <i class="fas fa-graduation-cap me-2"></i>Quản lý giáo viên
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px">
-                    <i class="fas fa-money-check-alt me-2"></i>Quản lý thu chi
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px">
-                    <i class="fas fa-torah me-2"></i>Quản lý ca thi
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px">
-                    <i class="fas fa-tags me-2"></i>Quản lý khảo sá
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px">
-                    <i class="fab fa-facebook-messenger me-2"></i>Quản lý yêu cầu, thông báo
-                </a>
-            </div>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
+                Menu con 2
+            </a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
+                Menu con 3
+            </a>
         </div>
-        <!-- /Quản lý chung -->
-
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-graduation-cap me-2"></i>Quản lý giáo viên
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-money-check-alt me-2"></i>Quản lý thu chi
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-torah me-2"></i>Quản lý ca thi
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-tags me-2"></i>Quản lý khảo sát
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fab fa-facebook-messenger me-2"></i>Quản lý yêu cầu, thông báo
+        </a>
         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-unlock me-2"></i>Đổi mật khẩu
         </a>
