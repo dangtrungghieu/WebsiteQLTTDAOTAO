@@ -44,14 +44,14 @@
                             <tr>
                                 <th scope="row">@item.MaKhoaHoc</th>
                                 <td>@item.TenKhoaHoc</td>
-                                <td>@TrunCate(item.MoTa, 20)</td>
+                                <td>@TrunCate(item.MoTa, 30)</td>
                                 <td>@Html.FormatValue(item.LePhi, "{0:#,##0}") VNĐ</td>
                                 <td>@Html.FormatValue(@item.NgayTao, "{0:dd/MM/yyyy}") </td>
                                 <td>@item.NHANVIEN.TenNhanVien</td>
                                 <td>
-                                    <a href="@Url.Action("Edit","Course", new { id = item.MaKhoaHoc })" class="btn btn-warning" role="button"><i class="fas fa-edit"></i> Sửa</a>
-                                    <a href="@Url.Action("Details","Course", new { id = item.MaKhoaHoc })" class="btn btn-primary" role="button"><i class="fas fa-info-circle"></i> Chi tiết</a>
-                                    <a href="@Url.Action("Delete","Course", new { id = item.MaKhoaHoc })" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i> Xóa</a>
+                                    <a href="@Url.Action("Edit","Course", new { id = item.MaKhoaHoc })" class="btn btn-warning" role="button"><i class="fas fa-edit"></i></a>
+                                    <a href="@Url.Action("Details","Course", new { id = item.MaKhoaHoc })" class="btn btn-primary" role="button"><i class="fas fa-info-circle"></i></a>
+                                    <a href="@Url.Action("Delete","Course", new { id = item.MaKhoaHoc })" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                     }

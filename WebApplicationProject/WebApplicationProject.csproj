@@ -207,6 +207,7 @@
     <Compile Include="Model\LOAITHONGBAO.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\LoaiWithCount.cs" />
     <Compile Include="Model\LOP.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
@@ -363,6 +364,7 @@
     </Content>
     <Content Include="Areas\Admin\Views\Login\FooterAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Loai\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Loai\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

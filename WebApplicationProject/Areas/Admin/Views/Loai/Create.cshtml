@@ -1,0 +1,23 @@
+﻿@model IEnumerable<WebApplicationProject.Model.LOAI>
+@using (Html.BeginForm("Create", "Loai", FormMethod.Post))
+{
+    <div class="form-group">
+        <label class="mg-head">Tên loại</label>
+        <input type="text" placeholder="Nhập tên loại.." class="form-control"
+               value="@ViewBag.Ten" name="sTen" required>
+        <div class="thongbao">
+            @ViewBag.ThongBao
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="mg-head">Tên nhân viên</label>
+        <input type="text" class="form-control" value="@ViewBag.TenNV" name="sTenNV" required readonly>
+    </div>
+    <div class="form-group">
+        <label class="mg-head">Ngày tạo</label>
+        <input type="text" class="form-control" value="@Convert.ToDateTime(DateTime.Now)" name="sNgayTao" readonly>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <button type="reset" class="btn btn-danger">Nhập lại</button>
+}

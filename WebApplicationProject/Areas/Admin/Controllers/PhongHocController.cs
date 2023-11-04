@@ -14,7 +14,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         public ActionResult Index(int? page, string strSearch)
         {
             var kq = db.PHONGHOC.Select(n => n);
-            int iSize = 10;
+            int iSize = 15;
             int iPageNum = (page ?? 1);
             if (!String.IsNullOrEmpty(strSearch))
             {
