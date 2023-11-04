@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h2 style="text-align:center">QUẢN LÝ PHÒNG HỌC</h2>
             <div class="col">
                 <table class="table bg-white rounded shadow-sm  table-hover" style="text-align:center">
@@ -33,6 +33,7 @@
                             <th scope="col">Tên phòng</th>
                             <th scope="col">Loại phòng</th>
                             <th scope="col">Sức chứa</th>
+                            <th scope="col">Tình trạng</th>
                             <th scope="col">Ngày tạo</th>
                             <th scope="col">Người tạo</th>
                             <th scope="col">Thao tác</th>
@@ -41,19 +42,21 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <th scope="row">@item.MaPhongHoc</th>
-                                <td>@item.TenPhongHoc</td>
-                                <td>@item.LOAI.TenLoai</td>
-                                <td>@item.SucChua</td>
-                                <td>@Html.FormatValue(@item.NgayTao, "{0:dd/MM/yyyy}") </td>
-                                <td>@item.NHANVIEN.TenNhanVien</td>
-                                <td>
-                                    <a href="@Url.Action("Edit","Course", new { id = item.MaPhongHoc })" class="btn btn-warning" role="button">Sửa</a>
-                                    <a href="@Url.Action("Details","Course", new { id = item.MaPhongHoc})" class="btn btn-primary" role="button">Chi tiết</a>
-                                    <a href="@Url.Action("Delete","Course", new { id = item.MaPhongHoc })" class="btn btn-danger" role="button">Xóa</a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <th scope="row">@item.MaPhongHoc</th>
+                            <td>@item.TenPhongHoc</td>
+                            <td>@item.LOAI.TenLoai</td>
+                            <td>@item.SucChua</td>
+                            <td>@item.TinhTrang</td>
+                            <td>@Html.FormatValue(@item.NgayTao, "{0:dd/MM/yyyy}") </td>
+                            <td>@item.NHANVIEN.TenNhanVien</td>
+                            <td>
+                                @*<a href="@Url.Action("EditTinhTrang","PhongHoc", new { id = item.MaPhongHoc })" class="btn btn-success" role="button">Cập nhật tình trạng</a>*@
+                                <a href="@Url.Action("Edit","PhongHoc", new { id = item.MaPhongHoc })" class="btn btn-warning" role="button"><i class="fas fa-edit"></i> Sửa</a>
+                                <a href="@Url.Action("Details","PhongHoc", new { id = item.MaPhongHoc})" class="btn btn-primary" role="button"><i class="fas fa-info-circle"></i> Chi tiết</a>
+                                <a href="@Url.Action("Delete","PhongHoc", new { id = item.MaPhongHoc })" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i> Xóa</a>
+                            </td>
+                        </tr>
                         }
                     </tbody>
                 </table>
@@ -63,9 +66,6 @@
             <div class="MenuTrang">
                 @Html.PagedListPager(Model, page => Url.Action("Index", "PhongHoc", new { iMaKH = ViewBag.MaKH, page = page }))
             </div>
-        </div>
-        <div class="col-md-4 bg-ChildMenu" style="height:580px">
-            <h4 style="text-align: center">DANH SÁCH LOẠI PHÒNG</h4>
         </div>
 </div>
 </div>

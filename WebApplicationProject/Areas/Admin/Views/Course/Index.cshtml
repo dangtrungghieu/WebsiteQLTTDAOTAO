@@ -24,7 +24,7 @@
             </div>
         </div>
     <div class="row g-3 my-2">
-        <h2>QUẢN LÝ KHÓA HỌC</h2>
+        <h2 style="text-align:center">QUẢN LÝ KHÓA HỌC</h2>
         <div class="col">
             <table class="table bg-white rounded shadow-sm  table-hover" style="text-align:center">
                 <thead>
@@ -49,9 +49,9 @@
                                 <td>@Html.FormatValue(@item.NgayTao, "{0:dd/MM/yyyy}") </td>
                                 <td>@item.NHANVIEN.TenNhanVien</td>
                                 <td>
-                                    <a href="@Url.Action("Edit","Course", new { id = item.MaKhoaHoc })" class="btn btn-warning" role="button">Sửa</a>
-                                    <a href="@Url.Action("Details","Course", new { id = item.MaKhoaHoc })" class="btn btn-primary" role="button">Chi tiết</a>
-                                    <a href="@Url.Action("Delete","Course", new { id = item.MaKhoaHoc })" class="btn btn-danger" role="button">Xóa</a>
+                                    <a href="@Url.Action("Edit","Course", new { id = item.MaKhoaHoc })" class="btn btn-warning" role="button"><i class="fas fa-edit"></i> Sửa</a>
+                                    <a href="@Url.Action("Details","Course", new { id = item.MaKhoaHoc })" class="btn btn-primary" role="button"><i class="fas fa-info-circle"></i> Chi tiết</a>
+                                    <a href="@Url.Action("Delete","Course", new { id = item.MaKhoaHoc })" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i> Xóa</a>
                                 </td>
                             </tr>
                     }
