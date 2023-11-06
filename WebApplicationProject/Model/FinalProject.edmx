@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DA_QLTTDaoTaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DA_QLTTDaoTaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CAHOC">
           <Key>
             <PropertyRef Name="MaCaHoc" />
@@ -80,6 +80,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MaTaiKhoan_HocVien" Type="int" />
           <Property Name="MaLop_HocVien" Type="int" />
+          <Property Name="SoDienThoai" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="KETQUA">
           <Key>
@@ -917,8 +918,7 @@
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DA_QLTTDaoTaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1016,6 +1016,7 @@
           <NavigationProperty Name="YEUCAUHOCVIEN" Relationship="Self.FK_MAHOCVIEN_YEUCAUHOCVIEN" FromRole="HOCVIEN" ToRole="YEUCAUHOCVIEN" />
           <NavigationProperty Name="LOP" Relationship="Self.FK_MALOP_HOCVIEN" FromRole="HOCVIEN" ToRole="LOP" />
           <NavigationProperty Name="TAIKHOAN" Relationship="Self.FK_MATAIKHOAN_HOCVIEN" FromRole="HOCVIEN" ToRole="TAIKHOAN" />
+          <Property Name="SoDienThoai" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="KETQUA">
           <Key>
@@ -1987,6 +1988,7 @@
           <EntitySetMapping Name="HOCVIEN">
             <EntityTypeMapping TypeName="DA_QLTTDaoTaoModel.HOCVIEN">
               <MappingFragment StoreEntitySet="HOCVIEN">
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
                 <ScalarProperty Name="MaHocVien" ColumnName="MaHocVien" />
                 <ScalarProperty Name="TenHocVien" ColumnName="TenHocVien" />
                 <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
