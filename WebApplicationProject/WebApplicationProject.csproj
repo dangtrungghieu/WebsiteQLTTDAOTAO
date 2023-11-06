@@ -249,6 +249,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\cssLoginAdmin.css" />
+    <Content Include="Content\profile.css" />
     <Content Include="Content\StyleCreate.css" />
     <Content Include="Content\StyleLoginUser.css" />
     <Content Include="Content\PagedList.css" />
@@ -287,6 +288,7 @@
     <Content Include="images\KH7.jpg" />
     <Content Include="images\KH8.jpg" />
     <Content Include="images\KH9.jpg" />
+    <Content Include="images\avatar.jpg" />
     <Content Include="images\Logo_Version1.png" />
     <Content Include="images\preloader.gif" />
     <Content Include="images\student-1.png" />
@@ -365,6 +367,8 @@
     <Content Include="Areas\Admin\Views\Login\FooterAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Loai\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Loai\Create.cshtml" />
+    <Content Include="Areas\User\Views\Shared\LayoutUser.cshtml" />
+    <Content Include="Areas\User\Views\User\ProFile.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
