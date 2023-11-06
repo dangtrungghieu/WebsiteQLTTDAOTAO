@@ -22,9 +22,10 @@ namespace WebApplicationProject.Areas.Admin.Controllers
                 int soLuong = db.PHONGHOC.Count(n => n.MaLoaiPhong_PhongHoc == item.MaLoai);
                 loaiWithCount.Add(new LoaiWithCount
                 {
+                    MaLoai = item.MaLoai,
                     TenLoai = item.TenLoai,
                     SoLuong = soLuong
-                });
+                }) ;
             }
             return View(loaiWithCount);
         }

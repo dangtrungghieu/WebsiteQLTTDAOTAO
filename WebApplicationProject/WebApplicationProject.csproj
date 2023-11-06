@@ -135,9 +135,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CaHocController.cs" />
     <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LopController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NhanVienController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhongHocController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
@@ -162,6 +165,7 @@
     <Compile Include="Model\DANHGIAKHOAHOC.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\DanhSachKH_CH_PH_Loai.cs" />
     <Compile Include="Model\DonXinNghi.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
@@ -365,6 +369,9 @@
     <Content Include="Areas\Admin\Views\Login\FooterAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Loai\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Loai\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Lop\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Lop\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -399,6 +406,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\CaHoc\" />
     <Folder Include="Areas\Teacher\Controllers\" />
     <Folder Include="Areas\Teacher\Data\" />
     <Folder Include="Areas\Teacher\Views\Shared\" />
