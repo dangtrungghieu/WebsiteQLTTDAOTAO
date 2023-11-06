@@ -359,6 +359,13 @@
     <Content Include="Areas\Admin\Views\Course\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\PhongHoc\Index.cshtml" />
     <Content Include="Areas\Admin\Views\PhongHoc\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\FooterAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Loai\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Loai\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Lop\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Lop\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GiaoVien\Index.cshtml" />
     <EntityDeploy Include="Model\FinalProject.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FinalProject.Designer.cs</LastGenOutput>
@@ -366,12 +373,6 @@
     <Content Include="Model\FinalProject.edmx.diagram">
       <DependentUpon>FinalProject.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Login\FooterAdmin.cshtml" />
-    <Content Include="Areas\Admin\Views\Loai\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Loai\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Lop\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Lop\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\NhanVien\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

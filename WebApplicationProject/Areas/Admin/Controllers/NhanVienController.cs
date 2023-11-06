@@ -15,14 +15,14 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         public ActionResult Index(int? page, string strSearch)
         {
             ViewBag.Search = strSearch;
-            var kq = db.NHANVIEN.Select(b => b);
+            var kq = from gv in db.NHANVIEN.Where(n => n.LOAINHANVIEN.TenLoaiNhanVien == "Giáo viên") select gv;
             int iSize = 12;
             int iPageNum = (page ?? 1);
             if (!String.IsNullOrEmpty(strSearch))
             {
                 kq = kq.Where(b => b.TenNhanVien.Contains(strSearch));
             }
-            return View(kq.OrderBy(s => s.LOAINHANVIEN.MaLoaiNhanVien).ToPagedList(iPageNum, iSize));
+            return View(kq.OrderBy(s => s.MaNhanVien).ToPagedList(iPageNum, iSize));
         }
     }
 }

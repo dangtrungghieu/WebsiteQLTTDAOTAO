@@ -35,6 +35,7 @@ namespace WebApplicationProject.Model
         public string Email { get; set; }
         public Nullable<int> MaTaiKhoan_HocVien { get; set; }
         public Nullable<int> MaLop_HocVien { get; set; }
+        public int SoDienThoai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DANGKY> DANGKY { get; set; }

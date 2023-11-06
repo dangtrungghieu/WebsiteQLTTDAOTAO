@@ -1,48 +1,26 @@
-﻿
-<!-- Navigationbar -->
+﻿<!-- Navigationbar -->
 <div class="bg-white" id="sidebar-wrapper">
     <div class="sidebar-heading">
         <img src="~/images/Logo_Version1.png" width="200" />
 
     </div>
-    <hr/>
+    <hr />
     <div class="list-group list-group-flush my-3">
         <a href="@Url.Action("Admin","Login")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-house-user me-2"></i>Trang chủ
         </a>
-        <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold @*d-flex justify-content-between*@" data-bs-toggle="collapse" href="#collapseNguoiDung" role="button" aria-expanded="false" aria-controls="collapseNguoiDung">
-            <i class="fas fa-users me-2"></i>Quản lý người dùng
+        <a href="@Url.Action("Index","NhanVien")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-users me-2"></i>Quản lý giáo viên
         </a>
-        <div id="collapseNguoiDung" class="collapse" data-parent="#quanlyChung">
-
-            <a href="@Url.Action("Index","NhanVien")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Quản lý nhân viên
-            </a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Quản lý học viên
-            </a>
-        </div>
         <a href="@Url.Action("Index","Course")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-window-restore me-2"></i>Quản lý khóa học
         </a>
         <a href="@Url.Action("Index","PhongHoc")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-laptop-house me-2"></i>Quản lý phòng học
         </a>
-        <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold @*d-flex justify-content-between*@" data-bs-toggle="collapse" href="#collapseLopHoc" role="button" aria-expanded="false" aria-controls="collapseLopHoc">
+        <a href="@Url.Action("Index","Lop")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-pencil-ruler"></i> Quản lý lớp học
         </a>
-        <div id="collapseLopHoc" class="collapse" data-parent="#quanlyChung">
-
-            <a href="@Url.Action("Index","Lop")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Quản lý lớp học
-            </a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Quản lý ca học
-            </a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Phân chia phòng học
-            </a>
-        </div>
         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-graduation-cap me-2"></i>Quản lý giáo viên
         </a>
@@ -67,3 +45,15 @@
     </div>
 </div>
 <!-- /#Navigationbar-wrapper -->
+@*<a class="list-group-item list-group-item-action bg-transparent second-text fw-bold @*d-flex justify-content-between" data-bs-toggle="collapse" href="#collapseLopHoc" role="button" aria-expanded="false" aria-controls="collapseLopHoc">
+    <i class="fas fa-pencil-ruler"></i> Quản lý lớp học
+</a>
+<div id="collapseLopHoc" class="collapse" data-parent="#quanlyChung">
+
+    <a href="@Url.Action(" Index","Lop")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
+        Quản lý lớp học
+    </a>
+    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
+        Phân chia phòng học
+    </a>
+</div>*@

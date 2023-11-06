@@ -80,6 +80,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MaTaiKhoan_HocVien" Type="int" />
           <Property Name="MaLop_HocVien" Type="int" />
+          <Property Name="SoDienThoai" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="KETQUA">
           <Key>
@@ -1007,6 +1008,7 @@
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaTaiKhoan_HocVien" Type="Int32" />
           <Property Name="MaLop_HocVien" Type="Int32" />
+          <Property Name="SoDienThoai" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DANGKY" Relationship="Self.FK_MAHOCVIEN_DANGKY" FromRole="HOCVIEN" ToRole="DANGKY" />
           <NavigationProperty Name="DANHGIAKHOAHOC" Relationship="Self.FK_MAHOCVIEN_DANHGIAKHOAHOC" FromRole="HOCVIEN" ToRole="DANHGIAKHOAHOC" />
           <NavigationProperty Name="DonXinNghi" Relationship="Self.FK_MAHOCVIEN_DONXINNGHI" FromRole="HOCVIEN" ToRole="DonXinNghi" />
@@ -1996,6 +1998,7 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="MaTaiKhoan_HocVien" ColumnName="MaTaiKhoan_HocVien" />
                 <ScalarProperty Name="MaLop_HocVien" ColumnName="MaLop_HocVien" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

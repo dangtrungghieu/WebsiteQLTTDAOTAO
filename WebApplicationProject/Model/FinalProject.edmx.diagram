@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4e2c352818b84e749e87fa9c5a49e939" Name="Diagram1" ZoomLevel="40">
+      <Diagram DiagramId="d356cb108b6147e499bdaa4ef0960b5f" Name="Diagram1" ZoomLevel="47">
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CAHOC" Width="1.5" PointX="11.25" PointY="38.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CATHI" Width="1.5" PointX="11.25" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.CHAMCONG" Width="1.5" PointX="8.25" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DANGKY" Width="1.5" PointX="5.25" PointY="23.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DANHGIAKHOAHOC" Width="1.5" PointX="10.5" PointY="27.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.DonXinNghi" Width="1.5" PointX="5.25" PointY="34.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.HOCVIEN" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.HOCVIEN" Width="1.5" PointX="3" PointY="27.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KETQUA" Width="1.5" PointX="13.5" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KETQUAKHAOSAT" Width="1.5" PointX="10.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KETQUAKHAOSAT" Width="1.5" PointX="10.5" PointY="23.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KHAOSAT" Width="1.5" PointX="8.25" PointY="21.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.KHOAHOC" Width="1.5" PointX="8.25" PointY="25.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DA_QLTTDaoTaoModel.LOAI" Width="1.5" PointX="8.25" PointY="29.375" IsExpanded="true" />
