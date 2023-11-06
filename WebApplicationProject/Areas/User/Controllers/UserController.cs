@@ -14,7 +14,7 @@ namespace WebApplicationProject.Areas.User.Controllers
         public ActionResult Profile()
         {
             var hocvien = db.HOCVIEN.FirstOrDefault(hv => hv.MaHocVien == 4);
-            return View(hocvien);
+            return View(hocvien); 
         }
         // GET: User/Login
         public ActionResult Login()
