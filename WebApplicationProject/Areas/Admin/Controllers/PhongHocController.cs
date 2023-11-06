@@ -11,8 +11,10 @@ namespace WebApplicationProject.Areas.Admin.Controllers
     {
         FINALPROJECTEntities db = new FINALPROJECTEntities();
         // GET: Admin/PhongHoc
+        [HttpGet]
         public ActionResult Index(int? page, string strSearch)
         {
+            CapNhatTinhTrangPhongHoc();
             var kq = db.PHONGHOC.Select(n => n);
             int iSize = 15;
             int iPageNum = (page ?? 1);
@@ -23,7 +25,6 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             }
             return View(kq.OrderBy(s => s.MaPhongHoc).ToPagedList(iPageNum, iSize));
         }
-
         //GET: Admin/PhongHoc/Create
         [HttpGet]
         public ActionResult Create()
@@ -58,6 +59,34 @@ namespace WebApplicationProject.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
             return View(loaiPhong.ToList().OrderBy(n => n.MaLoai));
+        }
+        private void CapNhatTinhTrangPhongHoc()
+        {
+            var phongHocCanCapNhat = db.PHONGHOC.ToList(); // Lấy danh sách tất cả các phòng học
+
+            foreach (var phongHoc in phongHocCanCapNhat)
+            {
+                // Lấy số lớp học trong phòng học cho các ca 1, 2 và 4
+                var soCaHoc = db.LOP.Count(lh => lh.MaPhongHoc_Lop == phongHoc.MaPhongHoc && (lh.MaCaHoc_Lop == 1 || lh.MaCaHoc_Lop == 2 || lh.MaCaHoc_Lop == 4));
+
+                if (soCaHoc < 3)
+                {
+                    // Kiểm tra tình trạng ban đầu trước khi cập nhật
+                    if (phongHoc.TinhTrang != "Đang Sửa")
+                    {
+                        phongHoc.TinhTrang = "Còn Trống";
+                    }
+                }
+                else
+                {
+                    // Kiểm tra tình trạng ban đầu trước khi cập nhật
+                    if (phongHoc.TinhTrang != "Đang Sửa")
+                    {
+                        phongHoc.TinhTrang = "Đủ";
+                    }
+                }
+            }
+            db.SaveChanges();
         }
 
     }

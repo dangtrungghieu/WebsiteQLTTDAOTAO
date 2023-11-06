@@ -1,0 +1,105 @@
+﻿@using WebApplicationProject.Model;
+@using PagedList.Mvc;
+@model PagedList.PagedList<LOP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
+}
+<!--Hiệu ứng mở, đóng View Create của Loại phòng-->
+<script>
+    $(document).ready(function () {
+        var isCreateVisible = false; // Biến để kiểm tra trạng thái hiển thị
+
+        $("#btnThem").click(function (event) {
+            event.preventDefault(); //
+
+            if (isCreateVisible) {
+                // Nếu view "Create" đang hiển thị, ẩn nó đi
+                $("#partialCreate").hide();
+                isCreateVisible = false;
+            } else {
+                // Nếu view "Create" đang ẩn, hiển thị nó
+                $("#partialCreate").show();
+                isCreateVisible = true;
+            }
+        });
+    });
+</script>
+
+<!--End Hiệu ứng mở, đóng View Create của Loại phòng-->
+<div class="container-fluid px-3">
+    <div class="row g-3 my-2">
+        <!--Thêm  tìm kiếm vào đây-->
+        @using (Html.BeginForm("Index", "Lop", FormMethod.Get))
+        {
+            <div class="body-search">
+                <div class="box-search">
+                    <input type="text" placeholder="Search... " value="@ViewBag.Search" name="strSearch">
+                    <input type="submit" value="Tìm" class="btn btn-primary" />
+                </div>
+            </div>
+        }
+        <!--Thêm mới-->
+        <div>
+            @Html.ActionLink("Thêm mới", "Create", null, htmlAttributes: new { @class = "btn btn-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align:center">QUẢN LÝ LỚP HỌC</h2><br />
+            <div class="col">
+                <table class="table bg-white rounded shadow-sm  table-hover" style="text-align:center">
+                    <thead>
+                        <tr>
+                            <th scope="col" width="50">ID</th>
+                            <th scope="col">Tên lớp</th>
+                            <th scope="col">Phòng</th>
+                            <th scope="col">Ngày khai giảng</th>
+                            <th scope="col">Ngày kết thúc</th>
+                            <th scope="col">Khóa học</th>
+                            <th scope="col">Ca học</th>
+                            <th scope="col">Giảng viên</th>
+                            <th scope="col">Loại lớp</th>
+                            <th scope="col">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <th scope="row">@item.MaLop</th>
+                            <td>@item.TenLop</td>
+                            <td>@item.PHONGHOC.TenPhongHoc</td>
+                            <td>@Html.FormatValue(@item.NgayKhaiGiang, "{0:dd/MM/yyyy}") </td>
+                            <td>@Html.FormatValue(@item.NgayKetThuc, "{0:dd/MM/yyyy}") </td>
+                            <td>@item.KHOAHOC.TenKhoaHoc</td>
+                            <td>@item.CAHOC.TenCaHoc</td>
+                            <td>@item.NHANVIEN.TenNhanVien</td>
+                            <td>@item.LOAI.TenLoai</td>
+                            <td>
+                                @*<a href="@Url.Action("EditTinhTrang","PhongHoc", new { id = item.MaPhongHoc })" class="btn btn-success" role="button">Cập nhật tình trạng</a>*@
+                                <a href="@Url.Action("Edit","PhongHoc", new { id = item.MaLop })" class="btn btn-warning" role="button"><i class="fas fa-edit"></i></a>
+                                <a href="@Url.Action("Details","PhongHoc", new { id = item.MaLop})" class="btn btn-primary" role="button"><i class="fas fa-info-circle"></i></a>
+                                <a href="@Url.Action("Delete","PhongHoc", new { id = item.MaLop})" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            @*Phần Menu phân trang*@
+            <link rel="stylesheet" href="~/Content/PagedList.css" />
+            <div class="MenuTrang">
+                @Html.PagedListPager(Model, page => Url.Action("Index", "Lop", new { iMaKH = ViewBag.MaKH, page = page }))
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .MenuTrang {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+
