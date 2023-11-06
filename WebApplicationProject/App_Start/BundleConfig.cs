@@ -31,6 +31,7 @@ namespace WebApplicationProject
             bundles.Add(new ScriptBundle("~/Script/jsLoginRegisterUser").Include("~/Scripts/ScriptLoginUser.js"));
             bundles.Add(new StyleBundle("~/Content/styleAdmin").Include("~/Content/styleAdmin.css", "~/Content/StyleCreate.css"));
             bundles.Add(new StyleBundle("~/Content/cssLoginAdmin").Include("~/Content/cssLoginAdmin.css"));
+            bundles.Add(new StyleBundle("~/Content/ProFile").Include("~/Content/profile.css"));
         }
     }
 }

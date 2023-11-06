@@ -10,9 +10,7 @@
     $(document).ready(function () {
         var isCreateVisible = false; // Biến để kiểm tra trạng thái hiển thị
 
-        $("#btnThem").click(function (event) {
-            event.preventDefault(); // 
-
+        $("#btnThem").click(function () {
             if (isCreateVisible) {
                 // Nếu view "Create" đang hiển thị, ẩn nó đi
                 $("#partialCreate").hide();
@@ -25,7 +23,6 @@
         });
     });
 </script>
-
 <!--End Hiệu ứng mở, đóng View Create của Loại phòng-->
 <div class="container-fluid px-3">
     <div class="row g-3 my-2">
@@ -89,10 +86,8 @@
                 @Html.PagedListPager(Model, page => Url.Action("Index", "PhongHoc", new { iMaKH = ViewBag.MaKH, page = page }))
             </div>
         </div>
-        <div class="col-md-3 bg-ChildMenu" style="height:757px">
+        <div class="col-md-3 bg-ChildMenu" style="height:600px">
             <h4 style="text-align:center">LOẠI PHÒNG</h4>
-            @Html.Action("Index", "Loai")
-
             <div style="text-align:center">
                 <a id="btnThem" href="#" class="btn btn-success" role="button"><i class="fas fa-plus"></i></a>
                 <a href="#" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i></a>
@@ -102,6 +97,8 @@
                 @Html.Action("Create", "Loai")
             </div>
             <br />
+            @Html.Action("Index", "Loai")
+
         </div>
     </div>
 </div>

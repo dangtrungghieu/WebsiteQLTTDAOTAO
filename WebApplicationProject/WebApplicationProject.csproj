@@ -135,12 +135,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\CaHocController.cs" />
     <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Admin\Controllers\LopController.cs" />
-    <Compile Include="Areas\Admin\Controllers\NhanVienController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhongHocController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
@@ -165,7 +162,6 @@
     <Compile Include="Model\DANHGIAKHOAHOC.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\DanhSachKH_CH_PH_Loai.cs" />
     <Compile Include="Model\DonXinNghi.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
@@ -253,6 +249,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\cssLoginAdmin.css" />
+    <Content Include="Content\profile.css" />
     <Content Include="Content\StyleCreate.css" />
     <Content Include="Content\StyleLoginUser.css" />
     <Content Include="Content\PagedList.css" />
@@ -291,6 +288,7 @@
     <Content Include="images\KH7.jpg" />
     <Content Include="images\KH8.jpg" />
     <Content Include="images\KH9.jpg" />
+    <Content Include="images\avatar.jpg" />
     <Content Include="images\Logo_Version1.png" />
     <Content Include="images\preloader.gif" />
     <Content Include="images\student-1.png" />
@@ -359,13 +357,6 @@
     <Content Include="Areas\Admin\Views\Course\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\PhongHoc\Index.cshtml" />
     <Content Include="Areas\Admin\Views\PhongHoc\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\FooterAdmin.cshtml" />
-    <Content Include="Areas\Admin\Views\Loai\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Loai\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Lop\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Lop\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\NhanVien\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\GiaoVien\Index.cshtml" />
     <EntityDeploy Include="Model\FinalProject.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FinalProject.Designer.cs</LastGenOutput>
@@ -373,6 +364,11 @@
     <Content Include="Model\FinalProject.edmx.diagram">
       <DependentUpon>FinalProject.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Login\FooterAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Loai\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Loai\Create.cshtml" />
+    <Content Include="Areas\User\Views\Shared\LayoutUser.cshtml" />
+    <Content Include="Areas\User\Views\User\ProFile.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -407,7 +403,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\CaHoc\" />
     <Folder Include="Areas\Teacher\Controllers\" />
     <Folder Include="Areas\Teacher\Data\" />
     <Folder Include="Areas\Teacher\Views\Shared\" />

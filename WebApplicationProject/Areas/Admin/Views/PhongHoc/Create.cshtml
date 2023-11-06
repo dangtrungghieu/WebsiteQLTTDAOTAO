@@ -34,7 +34,7 @@
             <div class="form-group">
                 <label class="mg-head">Tình Trạng</label>
                 <select name="sTinhTrang" class="form-control">
-                    <option value="Còn Trống">Trống</option>
+                    <option value="Trống">Trống</option>
                     <option value="Đủ">Đủ</option>
                     <option value="Đang sửa">Đang sửa</option>
                 </select>
@@ -56,14 +56,11 @@
                 <label class="mg-head">Ngày tạo</label>
                 <input type="text" class="form-control" value="@Convert.ToDateTime(DateTime.Now)" name="sNgayTao" readonly>
             </div>
-            <br />
             <button type="submit" class="btn btn-success mg-top ">Thêm mới</button>
             <button type="reset" class="btn btn-danger mg-top ">Nhập lại</button>
             @Html.ActionLink("Thêm mới loại phòng", "Index", null, htmlAttributes: new { @class = "btn btn-primary mg-top" })
         </div>
             }
-            <br />
-            <br />
             <div class="mg-top">
                 <i class="fas fa-arrow-left">@Html.ActionLink("Trở về trang quản lí khóa học", "Index", null, htmlAttributes: new { @class = "btn btn-default" })</i>
             </div>
