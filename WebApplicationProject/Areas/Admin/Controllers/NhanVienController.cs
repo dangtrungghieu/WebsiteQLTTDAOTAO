@@ -24,5 +24,11 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             }
             return View(kq.OrderBy(s => s.LOAINHANVIEN.MaLoaiNhanVien).ToPagedList(iPageNum, iSize));
         }
+        [HttpGet]
+        public ActionResult Create()
+        {
+           
+            return View();
+        }
     }
 }

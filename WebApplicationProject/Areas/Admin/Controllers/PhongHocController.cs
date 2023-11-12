@@ -60,6 +60,12 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             }
             return View(loaiPhong.ToList().OrderBy(n => n.MaLoai));
         }
+        [HttpGet]
+        public ActionResult Details(int ?id)
+        {
+            var phonghoc = db.PHONGHOC.SingleOrDefault(n => n.MaPhongHoc == id);
+            return View(phonghoc);
+        }
         private void CapNhatTinhTrangPhongHoc()
         {
             var phongHocCanCapNhat = db.PHONGHOC.ToList(); // Lấy danh sách tất cả các phòng học
