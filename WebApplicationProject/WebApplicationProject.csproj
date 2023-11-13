@@ -144,6 +144,7 @@
     <Compile Include="Areas\Admin\Controllers\PhongHocController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\CourseUserController.cs" />
     <Compile Include="Areas\User\Controllers\UserController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -798,7 +799,7 @@
     <Content Include="Areas\Admin\Views\Lop\Create.cshtml" />
     <Content Include="Areas\Admin\Views\NhanVien\Index.cshtml" />
     <Content Include="Areas\User\Views\Shared\LayoutUser.cshtml" />
-    <Content Include="Areas\User\Views\User\Profile.cshtml" />
+    <Content Include="Areas\User\Views\User\usProfile.cshtml" />
     <Content Include="Areas\Admin\Views\PhongHoc\Details.cshtml" />
     <Content Include="Areas\Admin\Views\NhanVien\Create.cshtml" />
     <Content Include="ckeditor\bender-runner.config.json" />
@@ -874,6 +875,7 @@
     <Folder Include="Areas\Teacher\Data\" />
     <Folder Include="Areas\Teacher\Views\Shared\" />
     <Folder Include="Areas\User\Data\" />
+    <Folder Include="Areas\User\Views\CourseUser\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
