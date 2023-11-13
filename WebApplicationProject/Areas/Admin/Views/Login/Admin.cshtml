@@ -4,57 +4,55 @@
     Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
 }
 <!-- Page Content -->
-    <div class="container-fluid px-4">
-        <div class="row g-3 my-2">
-            <div class="col-md-3">
-                <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                    <div>
-                        <h3 class="fs-2">@ViewBag.SoLuongHocSinh</h3>
-                        <p class="fs-5">Số lượng học sinh</p>
-                    </div>
-                    <i class="fas fa-user-graduate fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+<div class="container-fluid px-4">
+    <div class="row g-3 my-2">
+        <div class="col-md-3">
+            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                <div>
+                    <h3 class="fs-2">@ViewBag.SoLuongHocSinh</h3>
+                    <p class="fs-5">Tổng học sinh</p>
                 </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                    <div>
-                        <h3 class="fs-2">@ViewBag.SoLuongGiaoVien</h3>
-                        <p class="fs-5">Số lượng giáo viên</p>
-                    </div>
-                    <i class="fas fa-user-tie fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                    <div>
-                        <h3 class="fs-2">@ViewBag.SoLuongKhoaHoc</h3>
-                        <p class="fs-5">Số lượng khóa học</p>
-                    </div>
-                    <i class="fas fa-book-open fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                    <div>
-                        <h3 class="fs-2">@ViewBag.SoLuongLopHoc</h3>
-                        <p class="fs-5">Số lượng lớp học</p>
-                    </div>
-                    <i class="fas fa-house-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                </div>
+                <i class="fas fa-user-graduate fs-1 primary-text border rounded-full secondary-bg p-3"></i>
             </div>
         </div>
-    </div>
-<!-- /#page-content-wrapper -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-8">
 
+        <div class="col-md-3">
+            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                <div>
+                    <h3 class="fs-2">@ViewBag.SoLuongGiaoVien</h3>
+                    <p class="fs-5">Tổng giáo viên</p>
+                </div>
+                <i class="fas fa-user-tie fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+            </div>
         </div>
-        <div class="col-md-4">
 
+        <div class="col-md-3">
+            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                <div>
+                    <h3 class="fs-2">@ViewBag.SoLuongKhoaHoc</h3>
+                    <p class="fs-5">Tổng khóa học</p>
+                </div>
+                <i class="fas fa-book-open fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                <div>
+                    <h3 class="fs-2">@ViewBag.SoLuongLopHoc</h3>
+                    <p class="fs-5">Tổng lớp học</p>
+                </div>
+                <i class="fas fa-house-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+            </div>
         </div>
     </div>
 </div>
+<div class="col-md-12">
+    @Html.Action("TinhTrangDangKyKhoaHoc","Lich")
+</div>
+
+
+
+
+
+

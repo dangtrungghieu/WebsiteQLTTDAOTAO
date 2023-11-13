@@ -7,19 +7,33 @@
     </div>
     <hr/>
     <div class="list-group list-group-flush my-3">
-        <a href="@Url.Action("Admin","Login")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fas fa-house-user me-2"></i>Trang chủ
+        <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold" data-bs-toggle="collapse" href="#collapseQLChung" role="button" aria-expanded="false" aria-controls="collapseChung">
+            <i class="fas fa-house-user me-2"></i>Quản lý chung
         </a>
-        <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold @*d-flex justify-content-between*@" data-bs-toggle="collapse" href="#collapseNguoiDung" role="button" aria-expanded="false" aria-controls="collapseNguoiDung">
+        <div id="collapseQLChung" class="collapse" data-parent="#quanlyChung">
+            <a href="@Url.Action("Admin","Login")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
+                <i class="fas fa-scroll"></i> Tình hình chung
+            </a>
+            <a href="@Url.Action("Index","Lich")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
+                <i class="fas fa-calendar-alt"></i> Xem lịch hoạt động
+            </a>
+            @*<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
+                Phân chia phòng học
+            </a>*@
+        </div>
+        @*<a href="@Url.Action("Admin","Login")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-house-user me-2"></i>Quản lý chung
+        </a>*@
+        <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold" data-bs-toggle="collapse" href="#collapseNguoiDung" role="button" aria-expanded="false" aria-controls="collapseNguoiDung">
             <i class="fas fa-users me-2"></i>Quản lý người dùng
         </a>
         <div id="collapseNguoiDung" class="collapse" data-parent="#quanlyChung">
 
             <a href="@Url.Action("Index","NhanVien")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Quản lý nhân viên
+                <i class="fas fa-user-tie"></i> Quản lý giáo viên
             </a>
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Quản lý học viên
+                <i class="fas fa-user-graduate"></i> Quản lý học viên
             </a>
         </div>
         <a href="@Url.Action("Index","Course")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
@@ -28,29 +42,18 @@
         <a href="@Url.Action("Index","PhongHoc")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-laptop-house me-2"></i>Quản lý phòng học
         </a>
-        <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold @*d-flex justify-content-between*@" data-bs-toggle="collapse" href="#collapseLopHoc" role="button" aria-expanded="false" aria-controls="collapseLopHoc">
+        <a href="@Url.Action("Index", "Lop")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-pencil-ruler"></i> Quản lý lớp học
         </a>
-        <div id="collapseLopHoc" class="collapse" data-parent="#quanlyChung">
 
-            <a href="@Url.Action("Index","Lop")" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Quản lý lớp học
-            </a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Quản lý ca học
-            </a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="margin-left: 20px;">
-                Phân chia phòng học
-            </a>
-        </div>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+        @*<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-graduation-cap me-2"></i>Quản lý giáo viên
-        </a>
+        </a>*@
         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-money-check-alt me-2"></i>Quản lý thu chi
         </a>
         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fas fa-torah me-2"></i>Quản lý ca thi
+            <i class="fas fa-torah me-2"></i>Quản lý lịch thi
         </a>
         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-tags me-2"></i>Quản lý khảo sát

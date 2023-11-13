@@ -97,32 +97,6 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             return View(ds);
         }
 
-        //public ActionResult GetCaHocConTrong(int phongHocId)
-        //{
-        //    // Lấy danh sách các ca học còn trống dựa trên phongHocId
-        //    var cacCaHocConTrong = LayCaHocConTrongCuaPhongHoc(phongHocId);
-
-        //    return Json(cacCaHocConTrong, JsonRequestBehavior.AllowGet);
-        //}
-        ////Hàm cập nhật ca học trống
-        //public List<CAHOC> LayCaHocConTrongCuaPhongHoc(int maPhongHoc)
-        //{
-        //    // Lấy danh sách các mã ca học đã được sắp xếp cho phòng học cụ thể
-        //    var cacMaCaHocDaSapXep = db.LOP
-        //        .Where(l => l.MaPhongHoc_Lop == maPhongHoc)
-        //        .Select(l => l.MaCaHoc_Lop)
-        //        .ToList();
-
-        //    // Lấy danh sách các ca học còn trống trong phòng học cụ thể
-        //    var cacCaHocConTrong = db.CAHOC
-        //        .Where(ch => !cacMaCaHocDaSapXep.Contains(ch.MaCaHoc))
-        //        .ToList();
-
-        //    return cacCaHocConTrong;
-        //}
-
-        
-
         //Hàm kiểm tra, cập nhật tình trạng phòng học trước khi lấy dữ liệu
         private void CapNhatTinhTrangPhongHoc()
         {

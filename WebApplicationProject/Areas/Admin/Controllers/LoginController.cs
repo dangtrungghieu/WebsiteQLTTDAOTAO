@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -29,6 +30,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
             ViewBag.SoLuongGiaoVien = soLuongGiaoVien;
             ViewBag.SoLuongKhoaHoc = soLuongKhoaHoc;
             ViewBag.SoLuongLopHoc = soLuongLopHoc;
+
             return View();
         }
 
@@ -55,5 +57,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         {
             return View();
         }
+
+
     }
 }

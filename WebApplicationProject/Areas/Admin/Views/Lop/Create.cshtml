@@ -104,27 +104,3 @@
         </div>
     </div>
 </div>
-@*<script>
-    $(document).ready(function () {
-        // Sự kiện thay đổi của phòng học
-        $("#sPhongHoc").change(function () {
-            var selectedPhongHoc = $(this).val();
-            if (selectedPhongHoc) {
-                // Gọi API hoặc AJAX để lấy danh sách ca học còn trống dựa trên selectedPhongHoc
-                $.ajax({
-                    url: 'GetCaHocConTrong?phongHocId=' + selectedPhongHoc,
-                    type: 'GET',
-                    success: function (data) {
-                        // Cập nhật danh sách ca học còn trống trong dropdown
-                        var selectCahoc = $("#sCaHoc");
-                        selectCahoc.empty(); // Xóa tất cả các option hiện tại
-                        $.each(data, function (index, item) {
-                            selectCahoc.append($('<option>').val(item.MaCaHoc).text(item.TenCaHoc));
-                        });
-                    }
-                });
-            }
-        });
-    });
-</script>*@
-
