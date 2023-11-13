@@ -1,27 +1,9 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
-}
-<br />
-<div class="col-md-12">
+﻿<div class="col-md-12">
     <table id="calendar">
-        <caption><p style="color:yellow">Lịch làm việc của TrainingCenter HD</p> @DateTime.Now.ToString("MMMM yyyy")</caption>
-        <tr class="weekdays">
-            <th scope="col">Chủ nhật</th>
-            <th scope="col">Thứ hai</th>
-            <th scope="col">Thứ ba</th>
-            <th scope="col">Thứ tư</th>
-            <th scope="col">Thứ năm</th>
-            <th scope="col">Thứ sáu</th>
-            <th scope="col">Thứ bảy</th>
-        </tr>
-
         <tr class="days">
             @foreach (var date in Model.DisplayDates)
             {
-                <td class="day" style="background: #7FA4D3 " id="@date.ToString("yyyy-MM-dd")">
-                    <div class="date">@date.Day</div>
+                <td class="day" style="background: #F9F5EF" id="@date.ToString("yyyy-MM-dd")">
 
                     @foreach (var classInfo in Model.ClassesByDate[date])
                     {
@@ -38,12 +20,9 @@
                                 </div>
                             </div>
                         </div>
-
                     }
                 </td>
             }
         </tr>
     </table>
 </div>
-@Html.Action("Index2","Lich")
-@Html.Action("Index3","Lich")

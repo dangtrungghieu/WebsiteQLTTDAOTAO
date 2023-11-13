@@ -8,8 +8,10 @@ namespace WebApplicationProject.Model
     public class ClassInfo
     {
         public string ClassName { get; set; }
-        public string ClassTenCaHoc { get; set; }
+        public string ClassKhoaHoc { get; set; }
         public string ClassGiaoVien { get; set; }
+        public int ClassSiSoToiDa { get; set; }
+        public int ClassSoLuongDangKy { get; set; }
 
     }
 

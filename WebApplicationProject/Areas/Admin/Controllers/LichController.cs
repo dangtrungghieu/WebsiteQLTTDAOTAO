@@ -40,18 +40,101 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         {
 
             return db.LOP
-                .Where(c => c.NgayKhaiGiang <= date && c.NgayKetThuc >= date && (c.CAHOC.NgayHocTrongTuan.Contains(((int)date.DayOfWeek + 1).ToString())))
+                .Where(c => c.NgayKhaiGiang <= date && c.NgayKetThuc >= date && c.CAHOC.TenCaHoc.Contains("Sáng") && (c.CAHOC.NgayHocTrongTuan.Contains(((int)date.DayOfWeek + 1).ToString())))
                 .Select(c => new ClassInfo
                 {
                     ClassName = c.TenLop,
-                    ClassTenCaHoc = c.CAHOC.TenCaHoc,
-                    ClassGiaoVien = c.NHANVIEN.TenNhanVien
+                    ClassKhoaHoc = c.KHOAHOC.TenKhoaHoc,
+                    ClassGiaoVien = c.NHANVIEN.TenNhanVien,
+                    ClassSiSoToiDa = c.PHONGHOC.SucChua,
+                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop)
+                })
+                .ToList();
+        }
+        [HttpGet]
+        public ActionResult Index2()
+        {
+            //Hiển thị Calendar
+            CalendarViewModel model = new CalendarViewModel();
+            // Tính toán StartDate và DisplayDates
+            DateTime today = DateTime.Now;
+            DateTime startDate = today.AddDays(-(int)today.DayOfWeek);
+            DateTime endDate = startDate.AddDays(6);
+
+            model.StartDate = startDate;
+            model.DisplayDates = Enumerable.Range(0, (int)(endDate - startDate).TotalDays + 1)
+                .Select(offset => startDate.AddDays(offset))
+                .ToList();
+
+            // Thêm thông tin về giờ học
+            model.ClassesByDate = new Dictionary<DateTime, List<ClassInfo>>();
+            foreach (var date in model.DisplayDates)
+            {
+                List<ClassInfo> classesForDate = GetClassesForDate2(date);
+                model.ClassesByDate[date] = classesForDate;
+            }
+
+            return View(model);
+        }
+
+        private List<ClassInfo> GetClassesForDate2(DateTime date)
+        {
+
+            return db.LOP
+                .Where(c => c.NgayKhaiGiang <= date && c.NgayKetThuc >= date && c.CAHOC.TenCaHoc.Contains("Chiều") && (c.CAHOC.NgayHocTrongTuan.Contains(((int)date.DayOfWeek + 1).ToString())))
+                .Select(c => new ClassInfo
+                {
+                    ClassName = c.TenLop,
+                    ClassKhoaHoc = c.KHOAHOC.TenKhoaHoc,
+                    ClassGiaoVien = c.NHANVIEN.TenNhanVien,
+                    ClassSiSoToiDa = c.PHONGHOC.SucChua,
+                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop)
+                })
+                .ToList();
+        }
+        [HttpGet]
+        public ActionResult Index3()
+        {
+            //Hiển thị Calendar
+            CalendarViewModel model = new CalendarViewModel();
+            // Tính toán StartDate và DisplayDates
+            DateTime today = DateTime.Now;
+            DateTime startDate = today.AddDays(-(int)today.DayOfWeek);
+            DateTime endDate = startDate.AddDays(6);
+
+            model.StartDate = startDate;
+            model.DisplayDates = Enumerable.Range(0, (int)(endDate - startDate).TotalDays + 1)
+                .Select(offset => startDate.AddDays(offset))
+                .ToList();
+
+            // Thêm thông tin về giờ học
+            model.ClassesByDate = new Dictionary<DateTime, List<ClassInfo>>();
+            foreach (var date in model.DisplayDates)
+            {
+                List<ClassInfo> classesForDate = GetClassesForDate3(date);
+                model.ClassesByDate[date] = classesForDate;
+            }
+
+            return View(model);
+        }
+
+        private List<ClassInfo> GetClassesForDate3(DateTime date)
+        {
+
+            return db.LOP
+                .Where(c => c.NgayKhaiGiang <= date && c.NgayKetThuc >= date && c.CAHOC.TenCaHoc.Contains("Tối") && (c.CAHOC.NgayHocTrongTuan.Contains(((int)date.DayOfWeek + 1).ToString())))
+                .Select(c => new ClassInfo
+                {
+                    ClassName = c.TenLop,
+                    ClassKhoaHoc = c.KHOAHOC.TenKhoaHoc,
+                    ClassGiaoVien = c.NHANVIEN.TenNhanVien,
+                    ClassSiSoToiDa = c.PHONGHOC.SucChua,
+                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop)
                 })
                 .ToList();
         }
 
         [HttpGet]
-
         public ActionResult TinhTrangDangKyKhoaHoc()
         {
             var dk = db.LOP.ToList();
