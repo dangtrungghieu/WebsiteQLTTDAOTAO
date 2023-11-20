@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplicationProject.Model.DANGKY>
+
+@{
+    ViewBag.Title = "MyCourse";
+    Layout = "~/Areas/User/Views/Shared/LayoutUser.cshtml";
+}
+
+<div class="col-lg-8 pb-5">
+    <div class="d-flex justify-content-end pb-3">
+        <div class="form-inline">
+            <label class="text-muted mr-3" for="order-sort">Trạng thái</label>
+            <select class="form-control" id="order-sort">
+                <option>Tất cả</option>
+                <option>Đang học</option>
+                <option>Đã học</option>
+                <option>Đã hủy</option>
+                <option>Đã rớt</option>
+            </select>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>Tên Khóa Học</th>
+                    <th>Ngày Bắt Đầu</th>
+                    <th>Trạng Thái</th>
+                    <th>Lệ Phí</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><a class="navi-link" href="@Url.Action("DetailsCourse","CourseUser", new { id = item.LOP.KHOAHOC.MaKhoaHoc })" data-toggle="modal">@item.LOP.KHOAHOC.TenKhoaHoc</a></td>
+                        <td>@item.LOP.NgayKhaiGiang</td>
+                        <td><span class="badge badge-danger m-0">Chưa Đóng Lệ Phí</span></td>
+                        <td><span>@item.LOP.KHOAHOC.LePhi VNĐ</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

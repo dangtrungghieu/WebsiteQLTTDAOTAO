@@ -1,0 +1,51 @@
+﻿
+
+<header>
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 2rem 7%;
+            border-bottom: .1rem solid rgba(0,0,0,.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+            header .logo {
+                font-size: 2.5rem;
+                color: var(--violet);
+                font-weight: bold;
+            }
+
+            header .navbar {
+                border-radius: 4px;
+            }
+
+            header .navbar {
+                position: relative;
+                min-height: 50px;
+                margin-bottom: 20px;
+                border: 1px solid transparent;
+            }
+
+                header .navbar a {
+                    display: flex;
+                    margin-left: 1rem;
+                    font-size: 1rem;
+                    color: #333;
+                }
+    </style>
+    <a href="@Url.Action("Home","Home")" class="logo">TranningCenter<span>HD</span></a>
+
+    <nav class="navbar">
+        <a href="@Url.Action("Home","Home")">Trang chủ</a>
+        <a href="@Url.Action("Course", "Home")">Khóa học</a>
+        <a href="@Url.Action("Teacher", "Home")">Giáo viên</a>
+        <a href="@Url.Action("Price", "Home")">Ưu đãi</a>
+        <a href="@Url.Action("Review", "Home")">Đánh giá</a>
+        <a href="@Url.Action("Contact", "Home")">Liên hệ</a>
+        <a href="@Url.Action("Login", "User", new { area = "User" })">Đăng nhập</a>
+    </nav>
+</header>
