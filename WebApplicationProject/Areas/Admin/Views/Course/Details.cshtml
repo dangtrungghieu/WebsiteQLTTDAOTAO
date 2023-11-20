@@ -1,41 +1,55 @@
-﻿@model WebApplicationProject.Model.KHOAHOC
+﻿@using WebApplicationProject.Model
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
 }
-
+<link rel="stylesheet" href="~/Content/ButtonCss.css" />
 <div class="container">
     <h2 class="text-center">CHI TIẾT KHÓA HỌC</h2>
     <br />
     <div class="row">
         <div class="col-md-6 offset-md-3 text-center">
-            <img src="~/images/@Model.AnhKhoaHoc" alt="@Model.TenKhoaHoc" class="img-responsive" style="max-height: 300px; max-width: 100%;" />
+            <img src="~/images/@Model.KhoaHoc.AnhKhoaHoc" alt="@Model.KhoaHoc.TenKhoaHoc" class="img-responsive" style="max-height: 300px; max-width: 100%;" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <h4 class="tenkhoahoc" style="text-align: center; margin-top: 20px;">
-                @Html.DisplayFor(model => model.TenKhoaHoc)
+                @Model.KhoaHoc.TenKhoaHoc
             </h4>
             <div class="Motakhoahoc" style="margin-top: 20px;">
                 <i class="fas fa-info-circle" style="color: #fc4236;"></i>
-                <strong style="font-size: 16px;">Mô tả:</strong> @Html.Raw(Model.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
+                <strong style="font-size: 16px;">Mô tả:</strong> @Html.Raw(Model.KhoaHoc.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
             </div>
             <br />
-            <h4 class="ngaycapnhat" style="font-weight: bold; font-size: 16px;"> <i class="fas fa-calendar-day" style="color: #fc4236;"></i> Ngày tạo:  @Html.FormatValue(Model.NgayTao, "{0:dd/MM/yyyy}") </h4> 
-            <h4 class="giaban" style="font-weight: bold; font-size: 16px;"><i class="fas fa-money-check-alt" style="color: #fc4236;"></i> Lệ Phí: @Html.FormatValue(Model.LePhi, "{0:#,##0}")</h4>
-            <h4 class="nguoitao" style="font-weight: bold; font-size: 16px;"><i class="fas fa-user-check" style="color: #fc4236;"></i> Người tạo: @Model.NHANVIEN.TenNhanVien</h4>
-            <h4 class="chucvu" style="font-weight: bold; font-size: 16px;"><i class="fas fa-user-shield" style="color: #fc4236;"></i> Quyền hạn: @Model.NHANVIEN.LOAINHANVIEN.TenLoaiNhanVien</h4>
+            <h4 class="ngaycapnhat" style="font-weight: bold; font-size: 16px;"> <i class="fas fa-calendar-day" style="color: #fc4236;"></i> Ngày tạo:  @Html.FormatValue(Model.KhoaHoc.NgayTao, "{0:dd/MM/yyyy}") </h4>
+            <h4 class="giaban" style="font-weight: bold; font-size: 16px;"><i class="fas fa-money-check-alt" style="color: #fc4236;"></i> Lệ Phí: @Html.FormatValue(Model.KhoaHoc.LePhi, "{0:#,##0}")</h4>
+            <h4 class="nguoitao" style="font-weight: bold; font-size: 16px;"><i class="fas fa-user-check" style="color: #fc4236;"></i> Người tạo: @Model.KhoaHoc.NHANVIEN.TenNhanVien</h4>
+            <h4 class="chucvu" style="font-weight: bold; font-size: 16px;"><i class="fas fa-user-shield" style="color: #fc4236;"></i> Quyền hạn: @Model.KhoaHoc.NHANVIEN.LOAINHANVIEN.TenLoaiNhanVien</h4>
+            <h4 class="chucvu" style="font-weight: bold; font-size: 16px;"><i class="fas fa-house-user" style="color: #fc4236;"></i> Các lớp đang mở:</h4>
+            <!-- HTML !-->
+            <div class="col-md-12 px-2">
+                @foreach (var lopHoc in Model.DanhSachLopHoc)
+                {
+                    <button class="button-82-pushable" role="button">
+                        <span class="button-82-shadow"></span>
+                        <span class="button-82-edge"></span>
+                        <span class="button-82-front text">
+                            @lopHoc.TenLop
+                        </span>
+                    </button>
+                }
 
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12 text-center" style="margin-top: 20px;">
-            <a href="@Url.Action("Edit","Course", new { id = Model.MaKhoaHoc })" class="btn btn-warning" role="button"><i class="fas fa-edit"></i> Sửa</a>
-            <a href="@Url.Action("Delete","Course", new { id = Model.MaKhoaHoc })" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i> Xóa</a>
+            <a href="@Url.Action("Edit","Course", new { id = Model.KhoaHoc.MaKhoaHoc })" class="btn btn-warning" role="button"><i class="fas fa-edit"></i> Sửa</a>
+            <a href="@Url.Action("Delete","Course", new { id = Model.KhoaHoc.MaKhoaHoc })" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i> Xóa</a>
         </div>
     </div>
     <div class="mg-top">

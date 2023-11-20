@@ -3,6 +3,52 @@
     ViewBag.Title = "Admin";
     Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
 }
+<style>
+    .clock {
+        width: 100%;
+        background-color: #FFB758;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: lighter;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        border-radius: 20px;
+    }
+    .inside{
+        width: 100%;
+        background-color: #222;
+        padding: 35px 0;
+        text-align:center;
+         border-radius:20px;
+    }
+    .days-of-week{
+        color: #ffffff33;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: 1rem;
+    }
+    .active{
+        color: #ffffff;
+
+    }
+    .time{
+        font-size: 2.5em;
+        margin-top: 10px;
+    }
+    #ampm{
+        font-size: 0.5em;
+    }
+    .date{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 35px;
+    }
+
+</style>
 <!-- Page Content -->
 <div class="container-fluid px-4">
     <div class="row g-3 my-2">
@@ -47,10 +93,65 @@
         </div>
     </div>
 </div>
+<br />
+<div class="col-md-12" style="text-align: center; font-family: 'Times New Roman'; background-color: #D14150; border-radius: 30px; padding: 10px; margin: 5px">
+    <h4>CHÀO MỪNG ADMIN, <span style="color: #FFC83D; font-weight: bold; font-size: 35px">ĐẶNG TRUNG HIẾU</span> TRUY CẬP VÀO TRANG QUẢN TRỊ WEBSITE <span style="color: #FFEFA8; font-weight: bold; font-size: 30px ">TRAININGCENTER HD</span></h4>
+</div>
+<br />
+<div class="col-md-12">
+    <div class="clock">
+        <div class="inside">
+            <div class="days-of-week">
+                <span id="sun" class="active">SUN</span>
+                <span id="mon">MON</span>
+                <span id="tus" >TUS</span>
+                <span id="wed" >WED</span>
+                <span id="thu" >THU</span>
+                <span id="fri">FRI</span>
+                <span id="sat">SAT</span>
+            </div>
+            <br />
+            <div class="time">
+                <span id="hours">01</span>
+                :
+                <span id="min">01</span>
+                :
+                <span id="sec">01</span>
+                <span id="ampm">AM</span>
+            </div>
+            <div class="date">
+                <span class="icon">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span id="year">2023</span>
+                    <span id="month">JAN</span>
+                    <span id="day">01</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="col-md-12">
     @Html.Action("TinhTrangDangKyKhoaHoc","Lich")
 </div>
+<script>
+    function updateClock() {
+        var now = new Date();
+        var daysOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
+        var dayOfWeek = daysOfWeek[now.getDay()];
+        document.getElementById(dayOfWeek.toLowerCase()).classList.add("active");
+        document.getElementById("hours").innerText = ('0' + (now.getHours() % 12 || 12)).slice(-2);
+        document.getElementById("min").innerText = ('0' + now.getMinutes()).slice(-2);
+        document.getElementById("sec").innerText = ('0' + now.getSeconds()).slice(-2);
+        document.getElementById("ampm").innerText = now.getHours() >= 12 ? 'PM' : 'AM';
+        document.getElementById("year").innerText = now.getFullYear();
+        document.getElementById("month").innerText = now.toLocaleString('en-us', { month: 'short' }).toUpperCase();
+        document.getElementById("day").innerText = ('0' + now.getDate()).slice(-2);
+    }
+
+    setInterval(updateClock, 1000); 
+    updateClock(); 
+</script>
 
 
 

@@ -11,97 +11,77 @@
             @using (Html.BeginForm("Create", "NhanVien", FormMethod.Post, new { @enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
-        <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-sm-12 form-group">
-                        <label class="mg-head">Họ và tên</label>
-                        <input type="text" placeholder="Nhập tên giáo viên.." class="form-control"
-                               value="@ViewBag.Ten" name="sTen" required>
+                    <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-12 form-group">
+                                    <label class="mg-head">Họ và tên</label>
+                                    <input type="text" placeholder="Nhập tên giáo viên.." class="form-control"
+                                           value="@ViewBag.Ten" name="sTen" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="mg-head">Email</label>
+                                <input type="email" class="form-control" value="@ViewBag.Email" name="sEmail" required>
+                                <div class="thongbao">
+                                    <p> @ViewBag.ThongBaoEmail</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="mg-head">Ngày sinh</label>
+                                    <input type="date" class="form-control" value="@ViewBag.NgaySinh" name="sNgaySinh" required>
+                                    <div class="thongbao">
+                                        <p> @ViewBag.ThongBaoNgaySinh</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label class="mg-head">Giới tính</label>
+                                    <select name="sGioiTinh" class="form-control" required>
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nam">Nữ</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label class="mg-head">Ảnh đại diện</label>
+                                    <input type="file"  name="sAnhDaiDien" required/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="mg-head">Tên tài khoản giáo viên</label>
+                                    <input type="text" placeholder="Nhập tên tài khoản giáo viên.." class="form-control"
+                                           value="@ViewBag.TenTaiKhoan" name="sTenTaiKhoan" required>
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label class="mg-head">Ca học</label>
+                                    <select id="sCaHoc" name="sCaHoc" class="form-control" required>
+                                        @foreach (var item in Model.CahocList)
+                                        {
+                                            <option value="@item.MaCaHoc">@item.TenCaHoc</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label class="mg-head">Loại lớp học</label>
+                                    <select name="sLoaiLop" class="form-control" required>
+                                        @foreach (var item in Model.LoaiList)
+                                        {
+                                            <option value="@item.MaLoai">@item.TenLoai</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="mg-head">Mã nhân viên</label>
+                                <input type="text" value="5" class="form-control" name="sMaNV" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="mg-head">Tên nhân viên</label>
+                                <input type="text" value="Đặng Trung Hiếu" class="form-control" name="sTenNV" readonly>
+                            </div>
+                            <button type="submit" class="btn btn-success mg-top ">Thêm mới</button>
+                            <button type="reset" class="btn btn-danger mg-top ">Nhập lại</button>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="mg-head">Email</label>
-                    <input type="email" class="form-control" value="@ViewBag.Email" name="sEmail" required>
-                    <div class="thongbao">
-                        <p> @ViewBag.ThongBaoEmail</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <label class="mg-head">Ngày sinh</label>
-                        <input type="date" class="form-control" value="@ViewBag.NgaySinh" name="sNgaySinh" required>
-                        <div class="thongbao">
-                            <p> @ViewBag.ThongBaoNgaySinh</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 form-group">
-                        <label class="mg-head">Giới tính</label>
-                        <select name="sGioiTinh" class="form-control" required>
-                            <option value="Nam">Nam</option>
-                            <option value="Nam">Nữ</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-4 form-group">
-                        <label class="mg-head">Ảnh đại diện</label>
-                        <input type="file"  name="sAnhDaiDien" required/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <label class="mg-head">Phòng học</label>
-                        <select id="sPhongHoc" name="sPhongHoc" class="form-control" required>
-                            @foreach (var item in Model.PhongHocList)
-                            {
-                                <option value="@item.MaPhongHoc">@item.TenPhongHoc - @item.LOAI.TenLoai - @item.TinhTrang </option>
-                            }
-                        </select>
-                        <div class="thongbao">
-                            <p> @ViewBag.ThongBaoPhong</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 form-group">
-                        <label class="mg-head">Ca học</label>
-                        <select id="sCaHoc" name="sCaHoc" class="form-control" required>
-                            @foreach (var item in Model.CahocList)
-                            {
-                                <option value="@item.MaCaHoc">@item.TenCaHoc</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="col-sm-4 form-group">
-                        <label class="mg-head">Loại lớp học</label>
-                        <select name="sLoaiLop" class="form-control" required>
-                            @foreach (var item in Model.LoaiList)
-                            {
-                                <option value="@item.MaLoai">@item.TenLoai</option>
-                            }
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="mg-head">Giáo viên</label>
-                    <select name="sGiaoVien" class="form-control" required>
-                        @foreach (var item in Model.GiangvienList)
-                        {
-                            <option value="@item.MaNhanVien">@item.TenNhanVien</option>
-                        }
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="mg-head">Mã nhân viên</label>
-                    <input type="text" value="5" class="form-control" name="sMaNV" readonly>
-                </div>
-                <div class="form-group">
-                    <label class="mg-head">Tên nhân viên</label>
-                    <input type="text" value="Đặng Trung Hiếu" class="form-control" name="sTenNV" readonly>
-                </div>
-                <button type="submit" class="btn btn-success mg-top ">Thêm mới</button>
-                <button type="reset" class="btn btn-danger mg-top ">Nhập lại</button>
-        </div>
             }
             <div class="mg-top">
                 <i class="fas fa-arrow-left">@Html.ActionLink("Trở về trang quản lí lớp", "Index", null, htmlAttributes: new { @class = "btn btn-default" })</i>

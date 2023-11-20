@@ -47,7 +47,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
                     ClassKhoaHoc = c.KHOAHOC.TenKhoaHoc,
                     ClassGiaoVien = c.NHANVIEN.TenNhanVien,
                     ClassSiSoToiDa = c.PHONGHOC.SucChua,
-                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop)
+                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop && m.TinhTrang == "Đã đăng ký")
                 })
                 .ToList();
         }
@@ -88,7 +88,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
                     ClassKhoaHoc = c.KHOAHOC.TenKhoaHoc,
                     ClassGiaoVien = c.NHANVIEN.TenNhanVien,
                     ClassSiSoToiDa = c.PHONGHOC.SucChua,
-                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop)
+                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop && m.TinhTrang == "Đã đăng ký")
                 })
                 .ToList();
         }
@@ -129,7 +129,7 @@ namespace WebApplicationProject.Areas.Admin.Controllers
                     ClassKhoaHoc = c.KHOAHOC.TenKhoaHoc,
                     ClassGiaoVien = c.NHANVIEN.TenNhanVien,
                     ClassSiSoToiDa = c.PHONGHOC.SucChua,
-                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop)
+                    ClassSoLuongDangKy = db.DANGKY.Count(m => m.MaLopHoc_DangKy == c.MaLop && m.TinhTrang == "Đã đăng ký")
                 })
                 .ToList();
         }

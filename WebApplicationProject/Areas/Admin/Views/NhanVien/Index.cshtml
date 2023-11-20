@@ -43,23 +43,22 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                    <tr>
-                        <th scope="row">@item.MaNhanVien</th>
-                        <td>@item.TenNhanVien</td>
-                        <td>@item.GioiTinh</td>
-                        <td>@Html.FormatValue(@item.NgaySinh, "{0:dd/MM/yyyy}")</td>
-                        <td>@item.ChuyenNganh</td>
-                        <td>@TrunCate(item.DiaChi, 10)</td>
-                        <td>@TrunCate(item.Email, 10)</td>
-                        <td>@item.LOAINHANVIEN.TenLoaiNhanVien</td>
-                        <td>
-                            <a href="@Url.Action("Edit","NhanVien", new { id = item.MaNhanVien})" class="btn btn-warning" role="button"><i class="fas fa-edit"></i></a>
-                            <a href="@Url.Action("Details","NhanVien", new { id = item.MaNhanVien })" class="btn btn-primary" role="button"><i class="fas fa-info-circle"></i></a>
-                            <a href="@Url.Action("Delete","NhanVien", new { id = item.MaNhanVien })" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <th scope="row">@item.MaNhanVien</th>
+                            <td>@item.TenNhanVien</td>
+                            <td>@item.GioiTinh</td>
+                            <td>@Html.FormatValue(@item.NgaySinh, "{0:dd/MM/yyyy}")</td>
+                            <td>@item.ChuyenNganh</td>
+                            <td>@TrunCate(item.DiaChi, 10)</td>
+                            <td>@TrunCate(item.Email, 10)</td>
+                            <td>@item.LOAINHANVIEN.TenLoaiNhanVien</td>
+                            <td>
+                                <a href="@Url.Action("Edit","NhanVien", new { id = item.MaNhanVien})" class="btn btn-warning" role="button"><i class="fas fa-edit"></i></a>
+                                <a href="@Url.Action("Details","NhanVien", new { id = item.MaNhanVien })" class="btn btn-primary" role="button"><i class="fas fa-info-circle"></i></a>
+                                <a href="@Url.Action("Delete","NhanVien", new { id = item.MaNhanVien })" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
                     }
-
                 </tbody>
             </table>
         </div>

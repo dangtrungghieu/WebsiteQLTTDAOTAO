@@ -161,6 +161,7 @@
     <Compile Include="Model\CHAMCONG.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ChiTietGiaoVien.cs" />
     <Compile Include="Model\DANGKY.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
@@ -201,6 +202,7 @@
     <Compile Include="Model\KHOAHOC.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\KhoaHoc_LopHoc.cs" />
     <Compile Include="Model\LOAI.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
@@ -676,8 +678,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ButtonCss.css" />
     <Content Include="Content\cssLoginAdmin.css" />
     <Content Include="Content\profile.css" />
+    <Content Include="Content\ProfileGiaoVien.css" />
     <Content Include="Content\StyleCreate.css" />
     <Content Include="Content\StyleLoginUser.css" />
     <Content Include="Content\PagedList.css" />
@@ -837,6 +841,8 @@
     <Content Include="Areas\Admin\Views\Lich\TinhTrangDangKyKhoaHoc.cshtml" />
     <Content Include="Areas\Admin\Views\Lich\Index2.cshtml" />
     <Content Include="Areas\Admin\Views\Lich\Index3.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\XemLichDay.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

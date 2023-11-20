@@ -62,8 +62,27 @@ namespace WebApplicationProject.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             var khoahoc = db.KHOAHOC.Find(id);
-            return View(khoahoc);
+
+            if (khoahoc == null)
+            {
+                return HttpNotFound();
+            }
+
+            var danhSachLopHoc = db.LOP.Where(l => l.MaKhoaHoc_Lop == id).ToList();
+
+            var khoaHoc_LopHoc = new KhoaHoc_LopHoc
+            {
+                KhoaHoc = khoahoc,
+                DanhSachLopHoc = danhSachLopHoc
+            };
+
+            return View(khoaHoc_LopHoc);
         }
 
         [HttpGet]

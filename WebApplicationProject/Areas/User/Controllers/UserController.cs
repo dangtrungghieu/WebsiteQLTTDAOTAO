@@ -86,14 +86,18 @@ namespace WebApplicationProject.Areas.User.Controllers
         }
         private List<ClassInfo> GetClassesForDate(DateTime date)
         {
-
+            var count = db.DANGKY
+                .Where(c => c.LOP.NgayKhaiGiang <= date && c.LOP.NgayKetThuc >= date && (c.LOP.CAHOC.NgayHocTrongTuan.Contains(((int)date.DayOfWeek + 1).ToString())) && c.MaHocVien_DangKy == 6)
+                .Count();
             return db.DANGKY
                 .Where(c => c.LOP.NgayKhaiGiang <= date && c.LOP.NgayKetThuc >= date && (c.LOP.CAHOC.NgayHocTrongTuan.Contains(((int)date.DayOfWeek + 1).ToString())) && c.MaHocVien_DangKy == 6)
                 .Select(c => new ClassInfo
                 {
                     ClassName = c.LOP.TenLop,
-                    ClassTenCaHoc = c.LOP.CAHOC.TenCaHoc,
-                    ClassGiaoVien = c.LOP.NHANVIEN.TenNhanVien
+                    ClassKhoaHoc = c.LOP.KHOAHOC.TenKhoaHoc,
+                    ClassGiaoVien = c.LOP.NHANVIEN.TenNhanVien,
+                    ClassSiSoToiDa = c.LOP.PHONGHOC.SucChua,
+                    ClassSoLuongDangKy = count
                 })
                 .ToList();
         }

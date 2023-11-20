@@ -1,0 +1,57 @@
+﻿<br />
+<div class="col-md-12">
+    <table id="calendar">
+        <caption style="background-color: #FFEFA8; color: #33DA9D ">
+            Lịch làm việc của giáo viên (từ ngày @DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek).ToString("dd/MM/yyyy") đến @DateTime.Now.AddDays(6).ToString("dd/MM/yyyy"))
+        </caption>
+
+        <tr class="weekdays">
+            <th scope="col">Chủ nhật</th>
+            <th scope="col">Thứ hai</th>
+            <th scope="col">Thứ ba</th>
+            <th scope="col">Thứ tư</th>
+            <th scope="col">Thứ năm</th>
+            <th scope="col">Thứ sáu</th>
+            <th scope="col">Thứ bảy</th>
+        </tr>
+
+        <tr class="days">
+            @foreach (var date in Model.DisplayDates)
+            {
+                <td class="day" style="background: #F96B3A " id="@date.ToString("yyyy-MM-dd")">
+                    <div class="date">@date.Day</div>
+
+                    @if (Model.ClassesByDate.ContainsKey(date))
+                    {
+                        foreach (var classInfo in Model.ClassesByDate[date])
+                        {
+                            <div class="class-info">
+                                <div class="event">
+                                    <div class="event-desc">
+                                        @classInfo.ClassName (Sĩ số: @classInfo.ClassSoLuongDangKy/@classInfo.ClassSiSoToiDa)
+                                    </div>
+                                    <div class="event-desc">
+                                        @classInfo.ClassGiaoVien
+                                    </div>
+                                    <div class="event-time">
+                                        @classInfo.ClassKhoaHoc
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="class-info">
+                            <div class="event">
+                                <div class="event-desc">
+                                    <em>Không có lịch học</em>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </td>
+            }
+        </tr>
+    </table>
+</div>
