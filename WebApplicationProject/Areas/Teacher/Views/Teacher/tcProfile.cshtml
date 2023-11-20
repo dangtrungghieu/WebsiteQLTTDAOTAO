@@ -1,0 +1,61 @@
+﻿@model WebApplicationProject.Model.NHANVIEN
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Areas/Teacher/Views/Shared/LayoutTeacher.cshtml";
+}
+
+<div class="col-lg-8 pb-5">
+    <form class="row" method="post">
+        @using (Html.BeginForm("tcProfile", "Teacher"))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="account-fn">Full Name</label>
+                    <input class="form-control" type="text" id="account-fn" name="sTenNhanVien" value="@Model.TenNhanVien" required="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="account-ln">Address</label>
+                    <input class="form-control" type="text" id="account-ln" name="sDiaChi" value="@Model.DiaChi" required="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="account-email">E-mail Address</label>
+                    <input class="form-control" type="email" id="account-email" name="sEmail" value="@Model.Email" disabled="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="account-phone">Phone Number</label>
+                    <input class="form-control" type="text" id="account-phone" name="sSoDienThoai" value="***" required="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="account-pass">New Password</label>
+                    <input class="form-control" type="password" id="account-pass" name="sMatKhauMoi">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="account-confirm-pass">Confirm Password</label>
+                    <input class="form-control" type="password" id="account-confirm-pass" name="XacNhanMatKhau">
+                </div>
+            </div>
+            <div class="col-12">
+                <hr class="mt-2 mb-3">
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="custom-control custom-checkbox d-block">
+                        <input class="custom-control-input" type="checkbox" id="subscribe_me" checked="">
+                        <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
+                    </div>
+                    <button class="btn btn-style-1 btn-primary" type="submit">Update Profile</button>
+                </div>
+            </div>
+        }
+    </form>
+</div>

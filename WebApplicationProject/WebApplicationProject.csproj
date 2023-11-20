@@ -143,6 +143,8 @@
     <Compile Include="Areas\Admin\Controllers\NhanVienController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhongHocController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
+    <Compile Include="Areas\Teacher\Controllers\ClassController.cs" />
+    <Compile Include="Areas\Teacher\Controllers\TeacherController.cs" />
     <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\CourseUserController.cs" />
     <Compile Include="Areas\User\Controllers\UserController.cs" />
@@ -243,6 +245,7 @@
     <Compile Include="Model\THONGBAO.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ThongBaoViewModel.cs" />
     <Compile Include="Model\TinhTrangDangKy.cs" />
     <Compile Include="Model\YEUCAUHOCVIEN.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
@@ -784,7 +787,6 @@
     <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Course\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Course\Details.cshtml" />
-    <Content Include="Areas\Teacher\Views\web.config" />
     <Content Include="Areas\Admin\Views\Course\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Course\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\PhongHoc\Index.cshtml" />
@@ -843,6 +845,15 @@
     <Content Include="Areas\Admin\Views\Lich\Index3.cshtml" />
     <Content Include="Areas\Admin\Views\NhanVien\Details.cshtml" />
     <Content Include="Areas\Admin\Views\NhanVien\XemLichDay.cshtml" />
+    <Content Include="Areas\Teacher\Views\Class\Create.cshtml" />
+    <Content Include="Areas\Teacher\Views\Class\DetailsClass.cshtml" />
+    <Content Include="Areas\Teacher\Views\Class\DetailsStudent.cshtml" />
+    <Content Include="Areas\Teacher\Views\Class\tcClass.cshtml" />
+    <Content Include="Areas\Teacher\Views\Class\tcNotification.cshtml" />
+    <Content Include="Areas\Teacher\Views\Shared\LayoutTeacher.cshtml" />
+    <Content Include="Areas\Teacher\Views\Teacher\NavTeacher.cshtml" />
+    <Content Include="Areas\Teacher\Views\Teacher\tcProfile.cshtml" />
+    <Content Include="Areas\Teacher\Views\web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -877,9 +888,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Teacher\Controllers\" />
-    <Folder Include="Areas\Teacher\Data\" />
-    <Folder Include="Areas\Teacher\Views\Shared\" />
     <Folder Include="Areas\User\Data\" />
     <Folder Include="Areas\User\Views\CourseUser\" />
   </ItemGroup>

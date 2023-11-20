@@ -1,0 +1,40 @@
+﻿@model WebApplicationProject.Model.ThongBaoViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Teacher/Views/Shared/LayoutTeacher.cshtml";
+}
+<div class="col-lg-8 pb-5">
+    <h2>Tạo Thông Báo</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NoiDung, "Nội Dung")
+            @Html.TextAreaFor(model => model.NoiDung, new { @class = "form-control", required = "false" })
+            @Html.ValidationMessageFor(model => model.NoiDung)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NguoiNhan, "Người Nhận")
+            @Html.TextBoxFor(model => model.NguoiNhan, new { @class = "form-control", required = "false" })
+            @Html.ValidationMessageFor(model => model.NguoiNhan)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaNhanVien_ThongBao, "Mã Nhân Viên")
+            @Html.TextBoxFor(model => model.MaNhanVien_ThongBao, new { @class = "form-control"})
+            @Html.ValidationMessageFor(model => model.MaNhanVien_ThongBao)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaLoaiThongBao_ThongBao, "Mã Loại Thông Báo")
+            @Html.TextBoxFor(model => model.MaLoaiThongBao_ThongBao, new { @class = "form-control"})
+            @Html.ValidationMessageFor(model => model.MaLoaiThongBao_ThongBao)
+        </div>
+
+        <button style="float:right" type="submit" class="btn btn-success">Tạo Thông Báo</button>
+    }
+</div>
