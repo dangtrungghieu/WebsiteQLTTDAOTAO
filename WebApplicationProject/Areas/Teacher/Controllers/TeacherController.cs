@@ -7,7 +7,7 @@ using WebApplicationProject.Model;
 
 namespace WebApplicationProject.Areas.Teacher.Controllers
 {
-    public class TeacherController : Controller  
+    public class TeacherController : Controller
     {
         FINALPROJECTEntities db = new FINALPROJECTEntities();
         // GET: Teacher/Teacher
@@ -35,6 +35,12 @@ namespace WebApplicationProject.Areas.Teacher.Controllers
             }
 
             return View(nhanvien);
+        }
+        public ActionResult NavTeacher()
+        {
+            var nhanvien = db.NHANVIEN.FirstOrDefault(nv => nv.MaNhanVien == 1);
+            return PartialView(nhanvien);
+
         }
         public ActionResult NavTeacher()
         {
