@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplicationProject.Model.NHANVIEN>
+@{
+    ViewBag.Title = "Teacher";
+    Layout = "~/Areas/User/Views/Shared/LayoutHomeUser.cshtml";
+}
+
+<h1 class="heading"> experienced teachers </h1>
+
+<!-- teacher section  -->
+
+<section class="teacher">
+    @foreach (var giaovien in Model)
+    {
+        <div class="box">
+            <img src="~/images/@giaovien.AnhDaiDien" alt="">
+            <h3>@giaovien.TenNhanVien</h3>
+            <span>Teacher</span>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+    }
+    @*<div class="box">
+        <img src="~/images/teacher-1.png" alt="">
+        <h3>john deo</h3>
+        <span>teacher</span>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+    </div>*@
+
+</section>
+

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApplicationProject.Model.LOP>
+
+@{
+    ViewBag.Title = "tcClass";
+    Layout = "~/Areas/Teacher/Views/Shared/LayoutTeacher.cshtml";
+}
+
+<div class="col-lg-8 pb-5">
+    <div class="d-flex justify-content-end pb-3">
+        <div class="form-inline">
+            <label class="text-muted mr-3" for="order-sort">Trạng thái</label>
+            <select class="form-control" id="order-sort">
+                <option>Tất cả</option>
+                <option>Đang dạy</option>
+                <option>Đã dạy</option>
+            </select>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>Tên Lớp</th>
+                    <th>Ngày Bắt Đầu</th>
+                    <th>Trạng Thái</th>
+                    <th>Tiến độ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><a class="navi-link" href="@Url.Action("DetailsClass","Class", new { id = item.MaLop })" data-toggle="modal">@item.TenLop</a></td>
+                        <td>@item.NgayKhaiGiang</td>
+                        <td><span class="badge badge-successs m-0">Đang dạy</span></td>
+                        <td><span>aa</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

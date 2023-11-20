@@ -1,19 +1,19 @@
-﻿@model WebApplicationProject.Model.HOCVIEN
+﻿@model WebApplicationProject.Model.NHANVIEN
 
 @{
     ViewBag.Title = "Profile";
-    Layout = "~/Areas/User/Views/Shared/LayoutUser.cshtml";
+    Layout = "~/Areas/Teacher/Views/Shared/LayoutTeacher.cshtml";
 }
 
 <div class="col-lg-8 pb-5">
     <form class="row" method="post">
-        @using (Html.BeginForm("usProfile", "User"))
+        @using (Html.BeginForm("tcProfile", "Teacher"))
         {
             @Html.AntiForgeryToken()
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="account-fn">Full Name</label>
-                    <input class="form-control" type="text" id="account-fn" name="sTenHocVien" value="@Model.TenHocVien" required="">
+                    <input class="form-control" type="text" id="account-fn" name="sTenNhanVien" value="@Model.TenNhanVien" required="">
                 </div>
             </div>
             <div class="col-md-6">
@@ -31,7 +31,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="account-phone">Phone Number</label>
-                    <input class="form-control" type="text" id="account-phone" name="sSoDienThoai" value="@Model.SoDienThoai" required="">
+                    <input class="form-control" type="text" id="account-phone" name="sSoDienThoai" value="***" required="">
                 </div>
             </div>
             <div class="col-md-6">

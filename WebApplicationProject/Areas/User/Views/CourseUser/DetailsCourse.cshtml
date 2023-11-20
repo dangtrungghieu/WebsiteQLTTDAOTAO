@@ -1,0 +1,156 @@
+﻿@model WebApplicationProject.Model.KHOAHOC
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>eCommerce Product Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    @Styles.Render("~/Content/detailscourse")
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1"><img style="height:30rem; width:100%" src="~/images/@Model.AnhKhoaHoc" /></div>
+                        </div>
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title">@Model.TenKhoaHoc</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no">41 reviews</span>
+                        </div>
+                        <p class="product-description">@Model.MoTa</p>
+                        <h4 class="price">Học Phí <span>@Model.LePhi VNĐ</span></h4>
+                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                        <h5 class="sizes">
+                            Ngôn ngữ:
+                            <span class="size" data-toggle="tooltip" title="small">Việt</span>
+                            <span class="size" data-toggle="tooltip" title="medium">Anh</span>
+                            <span class="size" data-toggle="tooltip" title="large">Trung</span>
+                        </h5>
+                        <h5 class="colors">
+                            Độ Khó :
+                            <a href="#" class="btn btn-warning btn-sm" role="button"></a>
+                            <a href="#" class="btn btn-primary btn-sm" role="button">Nâng Cao</a>
+                            <a href="#" class="btn btn-danger btn-sm" role="button">Chuyên Nghiệp</a>
+                        </h5>
+                        <div class="action">
+                            <button class="add-to-cart btn btn-default" type="button">Add To Card</button>
+                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h1 style="text-align:center; margin-top:30px; margin-bottom:20px"><strong>Các khóa học khác</strong></h1>
+            <div class="course">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="box">
+                            <img style="height:30rem; width:100%" src="Images/Logo.jpg" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h3>TenKhoaHoc 1</h3>
+                            <span class="amount">1.200.000 VNĐ</span>
+                            <p>Mô tả khóa học 1</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <div class="icons">
+                                <p class="small"><i class="far fa-clock"></i> 2 hours</p>
+                                <p class="small"><i class="far fa-calendar"></i> 6 months</p>
+                                <p class="small"><i class="fas fa-book"></i> 12 modules</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <img style="height:30rem; width:100%" src="Images/Logo.jpg" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h3>TenKhoaHoc 2</h3>
+                            <span class="amount">1.200.000 VNĐ</span>
+                            <p>Mô tả khóa học 2</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <div class="icons">
+                                <p class="small"><i class="far fa-clock"></i> 3 hours</p>
+                                <p class="small"><i class="far fa-calendar"></i> 8 months</p>
+                                <p class="small"><i class="fas fa-book"></i> 15 modules</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <img style="height:30rem; width:100%" src="Images/Logo.jpg" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h3>TenKhoaHoc 3</h3>
+                            <span class="amount">1.200.000 VNĐ</span>
+                            <p>Mô tả khóa học 3</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <div class="icons">
+                                <p class="small"><i class="far fa-clock"></i> 1.5 hours</p>
+                                <p class="small"><i class="far fa-calendar"></i> 4 months</p>
+                                <p class="small"><i class="fas fa-book"></i> 8 modules</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <img style="height:30rem; width:100%" src="Images/Logo.jpg" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h3>TenKhoaHoc 4</h3>
+                            <span class="amount">1.200.000 VNĐ</span>
+                            <p>Mô tả khóa học 4</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <div class="icons">
+                                <p class="small"><i class="far fa-clock"></i> 2.5 hours</p>
+                                <p class="small"><i class="far fa-calendar"></i> 5 months</p>
+                                <p class="small"><i class="fas fa-book"></i> 10 modules</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

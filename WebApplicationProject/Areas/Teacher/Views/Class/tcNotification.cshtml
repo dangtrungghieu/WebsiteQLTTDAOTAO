@@ -1,0 +1,37 @@
+﻿@model List<WebApplicationProject.Model.ThongBaoViewModel>
+
+@{
+    ViewBag.Title = "tcNotification";
+    Layout = "~/Areas/Teacher/Views/Shared/LayoutTeacher.cshtml";
+}
+
+<div class="table col-lg-9 pb-5" style="margin-right: -200px;">
+    <h2 style="text-align:center; margin-bottom:30px">Quản lý thông báo</h2>
+    <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+                <th style="text-align:center">Mã Thông Báo</th>
+                <th style="text-align:center">Nội Dung</th>
+                <th style="text-align:center">Người Nhận</th>
+                <th style="text-align:center">Ngày Gửi</th>
+                <th style="text-align:center">Nhân Viên</th>
+                <th style="text-align:center">Loại Thông Báo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var thongBao in Model)
+            {
+                <tr>
+                    <td style="text-align:center">@thongBao.MaThongBao</td>
+                    <td style="text-align:center">@thongBao.NoiDung</td>
+                    <td style="text-align:center">@thongBao.NguoiNhan</td>
+                    <td style="text-align:center">@thongBao.NgayGui</td>
+                    <td style="text-align:center">@thongBao.MaNhanVien_ThongBao</td>
+                    <td style="text-align:center">@thongBao.MaLoaiThongBao_ThongBao</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="@Url.Action("Create", "Class")" class="btn btn-primary" style="float:right; margin-top:50px">Tạo Thông Báo</a>
+</div>
+

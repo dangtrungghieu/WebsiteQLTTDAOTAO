@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApplicationProject.Model.KHOAHOC>
+
+@{
+    ViewBag.Title = "MyWishList";
+    Layout = "~/Areas/User/Views/Shared/LayoutUser.cshtml";
+}
+
+<div class="col-lg-8 pb-5">
+    <!-- Item-->
+    @foreach (var item in Model)
+    {
+        <div class="cart-item d-md-flex justify-content-between">
+            <span class="remove-item"><i class="fa fa-times"></i></span>
+            <div class="px-3 my-3">
+                <a class="cart-item-product" href="#">
+                    <div class="cart-item-product-thumb"><img src="~/images/@item.AnhKhoaHoc" alt="Product"></div>
+                    <div class="cart-item-product-info">
+                        <h4 class="cart-item-product-title">Canon EOS M50 Mirrorless Camera</h4>
+                        <div class="text-lg text-body font-weight-medium pb-1">$910.00</div><span>Availability: <span class="text-success font-weight-medium">In Stock</span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+    <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" checked="" id="inform-me">
+        <label class="custom-control-label" for="inform-me">Inform me when item from my wishlist is available</label>
+    </div>
+</div>
