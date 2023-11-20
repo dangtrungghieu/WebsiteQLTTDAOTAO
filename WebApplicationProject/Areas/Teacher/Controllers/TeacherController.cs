@@ -7,7 +7,7 @@ using WebApplicationProject.Model;
 
 namespace WebApplicationProject.Areas.Teacher.Controllers
 {
-    public class TeacherController : Controller
+    public class TeacherController : Controller  
     {
         FINALPROJECTEntities db = new FINALPROJECTEntities();
         // GET: Teacher/Teacher

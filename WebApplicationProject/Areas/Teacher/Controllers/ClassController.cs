@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplicationProject.Model;
 
-namespace WebApplicationProject.Areas.Teacher.Controllers
+namespace WebApplicationProject.Areas.Teacher.Controllers   
 {
     public class ClassController : Controller
     {
