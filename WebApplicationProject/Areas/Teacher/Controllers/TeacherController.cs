@@ -42,11 +42,5 @@ namespace WebApplicationProject.Areas.Teacher.Controllers
             return PartialView(nhanvien);
 
         }
-        public ActionResult NavTeacher()
-        {
-            var nhanvien = db.NHANVIEN.FirstOrDefault(nv => nv.MaNhanVien == 1);
-            return PartialView(nhanvien);
-
-        }
     }
 }
