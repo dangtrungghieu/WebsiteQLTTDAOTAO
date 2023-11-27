@@ -147,6 +147,7 @@
     <Compile Include="Areas\Teacher\Controllers\TeacherController.cs" />
     <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\CourseUserController.cs" />
+    <Compile Include="Areas\User\Controllers\DanhSachDangKyController.cs" />
     <Compile Include="Areas\User\Controllers\UserController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Model\DANHGIAKHOAHOC.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\DanhSachDangky.cs" />
     <Compile Include="Model\DanhSachKH_CH_PH_Loai.cs" />
     <Compile Include="Model\DonXinNghi.cs">
       <DependentUpon>FinalProject.tt</DependentUpon>
@@ -682,7 +684,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ButtonCss.css" />
+    <Content Include="Content\cart.css" />
     <Content Include="Content\cssLoginAdmin.css" />
+    <Content Include="Content\detailscourse.css" />
     <Content Include="Content\profile.css" />
     <Content Include="Content\ProfileGiaoVien.css" />
     <Content Include="Content\StyleCreate.css" />
@@ -854,6 +858,15 @@
     <Content Include="Areas\Teacher\Views\Teacher\NavTeacher.cshtml" />
     <Content Include="Areas\Teacher\Views\Teacher\tcProfile.cshtml" />
     <Content Include="Areas\Teacher\Views\web.config" />
+    <Content Include="Areas\User\Views\Shared\LayoutHomeUser.cshtml" />
+    <Content Include="Areas\User\Views\CourseUser\DetailsCourse.cshtml" />
+    <Content Include="Areas\User\Views\CourseUser\MyCourse.cshtml" />
+    <Content Include="Areas\User\Views\CourseUser\MyWishList.cshtml" />
+    <Content Include="Areas\User\Views\User\NavHeaderUser.cshtml" />
+    <Content Include="Areas\User\Views\User\NavUser.cshtml" />
+    <Content Include="Areas\User\Views\User\Schedule.cshtml" />
+    <Content Include="Areas\User\Views\DanhSachDangKy\DanhSachDangKy.cshtml" />
+    <Content Include="Areas\User\Views\DanhSachDangKy\DanhSachDangKyPartial.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -889,7 +902,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\User\Data\" />
-    <Folder Include="Areas\User\Views\CourseUser\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

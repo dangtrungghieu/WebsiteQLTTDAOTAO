@@ -3,21 +3,38 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>eCommerce Product Detail</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     @*@Styles.Render("~/Content/detailscourse")*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    @Styles.Render("~/Content/cssProject")
     <script src="script.js"></script>
+
 </head>
 
 <body>
 
     <div class="container">
+        <header>
+            <a href="@Url.Action("Home","Home")" class="logo">TranningCenter<span>HD</span></a>
+
+            <div id="menu" class="fas fa-bars"></div>
+
+            <nav class="navbar">
+                <a href="@Url.Action("Home","Home", new { area = "" })">Trang chủ</a>
+                <a href="@Url.Action("Course", "Home", new { area = "" })">Khóa học</a>
+                <a href="@Url.Action("Teacher", "Home", new { area = "" })">Giáo viên</a>
+                <a href="@Url.Action("Price", "Home", new { area = "" })">Ưu đãi</a>
+                <a href="@Url.Action("Review", "Home", new { area = "" })">Đánh giá</a>
+                <a href="@Url.Action("Contact", "Home", new { area = "" })">Liên hệ</a>
+                <a href="@Url.Action("Login", "User", new { area = "User" })">Đăng nhập</a>
+            </nav>
+        </header>
         <div class="card">
             <div class="container-fliud">
                 <div class="wrapper row">
@@ -54,7 +71,9 @@
                             <a href="#" class="btn btn-danger btn-sm" role="button">Chuyên Nghiệp</a>
                         </h5>
                         <div class="action">
-                            <button class="add-to-cart btn btn-default" type="button">Add To Card</button>
+                            <a href="@Url.Action("ThemDanhSachDangKy", "DanhSachDangKy", new { mkh = Model.MaKhoaHoc, url = Request.Url.ToString()}) class=" btn btn-primary" role="button" ">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to cart
+                            </a>
                             <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                         </div>
                     </div>
