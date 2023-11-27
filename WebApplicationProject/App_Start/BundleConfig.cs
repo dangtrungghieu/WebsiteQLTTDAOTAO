@@ -32,6 +32,7 @@ namespace WebApplicationProject
             bundles.Add(new StyleBundle("~/Content/styleAdmin").Include("~/Content/styleAdmin.css", "~/Content/StyleCreate.css"));
             bundles.Add(new StyleBundle("~/Content/cssLoginAdmin").Include("~/Content/cssLoginAdmin.css"));
             bundles.Add(new StyleBundle("~/Content/profile").Include("~/Content/profile.css"));
+            bundles.Add(new StyleBundle("~/Content/detailscourse").Include("~/Content/detailscourse.css"));
         }
     }
 }
